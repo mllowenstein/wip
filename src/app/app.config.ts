@@ -1,8 +1,24 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withPreloading, PreloadAllModules, withRouterConfig, withDebugTracing, withComponentInputBinding, withViewTransitions } from '@angular/router';
 
 import { routes } from './app.routes';
+import { provideClientHydration } from '@angular/platform-browser';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes)]
+  providers: [
+    provideRouter(
+      routes,
+      withDebugTracing(),
+      withComponentInputBinding(),
+      withViewTransitions(),
+      withPreloading(PreloadAllModules),
+      withRouterConfig({
+        onSameUrlNavigation: 'reload',
+        paramsInheritanceStrategy: 'always',
+      })
+    ),
+    provideClientHydration(),
+    provideAnimationsAsync()
+  ]
 };

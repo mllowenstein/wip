@@ -1,0 +1,52 @@
+.home-banner {
+  font-family: Montserrat;
+}
+
+.home-sub-banner {
+  margin-left: 8vw;
+}
+
+.page-writing {
+  width: 70vw;
+  margin-left: 15vw;
+  word-break: break-word;
+}
+
+.services-list {
+  margin-top: 25px;
+  display: block;
+  width: 70vw;
+  border: black 1px solid;
+  margin-left: 15vw;
+
+  .service-list-item {
+    border-bottom: black 1px solid;
+    padding: 10px;
+  }
+
+  .service-list-item-first {
+    border-bottom: black 1px solid;
+    padding: 0 10px 10px 10px;
+  }
+
+  .service-list-item-last {
+    padding: 10px 10px 0 10px;
+  }
+}
+
+.bullet-point-list {
+  margin-top: 5px;
+  margin-left: 5vw;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.bullet-point {
+  margin-right: 10px;
+  margin-left: 11vw;
+  padding-top: 6px;
+}
+
+footer {
+  text-align: center !important;
+}

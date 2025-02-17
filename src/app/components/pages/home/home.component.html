@@ -1,1 +1,22 @@
-<p>home works!</p>
+<div class="page-container">
+  <h3 class="home-banner">{{ site.header!.content }}</h3>
+  <h4 class="home-sub-banner">
+    <div [innerHTML]="util.sanitizeHtml(site.subheader!.content!.toString())"></div>
+  </h4>
+
+  <blockquote class="page-writing">
+    <div [innerHTML]="util.sanitizeHtml(site.body!.content!.toString())"></div>
+  </blockquote>
+
+  <span class="bullet-point-list">
+    <span class="bullet-point-list">
+      <span *ngFor="let service of site.bulletpoints!">
+        <mat-icon class="bullet-point">chevron_right</mat-icon>{{ service }}<br>
+      </span>
+    </span>
+  </span>
+
+  <footer>
+    <div [innerHTML]="util.sanitizeHtml(site.footer!.content!.toString())"></div>
+  </footer>
+</div>
