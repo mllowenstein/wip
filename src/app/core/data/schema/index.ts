@@ -109,20 +109,34 @@ export interface TeamMember {
   imageUrl: string;
 }
 
-export interface Profile {
-  id: string;
-  image: any;
-  name: string;
-  role?: string;
-  education?: string;
-  calltobar?:  string;
-  workexperience?: string;
-  achievements?: string[];
-  community?: string[];
-}
-
-export interface ProfileNav {
+export interface SectionNav {
   display: string;
   value: string;
   order: number;
+}
+export interface Section {
+  label: string;
+  id: number;
+  options: object;
+  route?: string;
+}
+
+export interface SkillMetric {
+  standalone?: boolean;
+  comments?: string;
+  context?: number;
+  rating: number;
+  name: string;
+  id?: number;
+}
+
+export interface EducationMetric {
+  extracurriculars?: string;
+  alternative?: boolean;
+  institution: string;
+  year_i?: number;
+  year_f?: number;
+  degree: string;
+  years: string;
+  field: string;
 }

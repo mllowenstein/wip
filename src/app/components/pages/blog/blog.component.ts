@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as schema from '../../../core/data/schema';
 
 @Component({
   selector: 'mll-blog',
