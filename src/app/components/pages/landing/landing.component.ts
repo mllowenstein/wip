@@ -9,5 +9,5 @@ import * as schema from '../../../core/data/schema';
   styleUrl: './landing.component.scss'
 })
 export class LandingComponent {
-  sections: schema.Section[] = [];
+  sections: schema.SiteSection[] = [];
 }

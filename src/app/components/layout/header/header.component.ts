@@ -28,8 +28,8 @@ export class HeaderComponent {
     return typeof window !== 'undefined';
   }
 
-  scrollToContact(): void {
-    window.location.hash = 'contact';
-    this.viewportScroller.scrollToAnchor('contact');
+  scrollToSummary(): void {
+    window.location.hash = 'summary';
+    this.viewportScroller.scrollToAnchor('summary');
   }
 }
