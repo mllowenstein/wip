@@ -16,6 +16,5 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full', data: { animation: '*' } },
   { path: 'home', component: HomeComponent, canActivate: [LandingGuard], data: { animation: 'HomePage' } },
   { path: 'about-me', component: AboutMeComponent, data: { animation: 'AboutMePage' } },
-  { path: 'blog', component: BlogComponent, data: { animation: 'BlogPage' } },
   { path: 'contact-me', component: ContactMeComponent, data: { animation: 'ContactMePage' } },
 ];
