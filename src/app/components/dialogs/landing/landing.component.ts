@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import * as schema from '../../../core/data/schema';
 
 @Component({
-  selector: 'mll-home',
+  selector: 'mll-landing',
   standalone: true,
   imports: [],
   templateUrl: './landing.component.html',
@@ -10,4 +11,10 @@ import * as schema from '../../../core/data/schema';
 })
 export class LandingComponent {
   sections: schema.SiteSection[] = [];
+
+  constructor(private dialogRef: MatDialogRef<LandingComponent>) { }
+
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
 }

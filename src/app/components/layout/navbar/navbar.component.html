@@ -6,7 +6,7 @@
     </a>
     <button class="navbar-toggle" (click)="toggleMenu()">☰</button>
     <ul [class.active]="menuOpen" class="navbar-links">
-      <li *ngFor="let link of links" class="nav-item" (click)="activate(link.path)" [ngClass]="{activelink: link.active}">
+      <li *ngFor="let link of links" class="nav-item" (click)="activate(link.path)">
         <a class="nav-link" routerLink="{{link.path}}">{{link.label}}</a>
       </li>
     </ul>

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { routes } from '../../../app.routes';
-import { Route } from '@angular/router';
+import { Route, RouterModule, RouterLink } from '@angular/router';
+import { MyOwnMaterialModule } from '../../../core/material';
 
 export interface NavRoute {
   active: boolean;
@@ -11,9 +13,11 @@ export interface NavRoute {
 
 @Component({
   selector: 'mll-navbar',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, RouterModule, MyOwnMaterialModule],
   templateUrl: './navbar.component.html',
-  styleUrl:'./navbar.component.scss'
+  styleUrl: './navbar.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class NavbarComponent implements OnInit {
   links: NavRoute[] = [];

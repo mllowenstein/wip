@@ -1,9 +1,24 @@
 import { animation, style, group, query, trigger, animate, transition, animateChild, keyframes } from '@angular/animations';
 
+export const fadeInOut = trigger('fadeInOut', [
+  transition(':enter', [style({ opacity: 0 }), animate('300ms ease-out', style({ opacity: 1 }))]),
+  transition(':leave', [animate('300ms ease-in', style({ opacity: 0 }))])
+]);
+
 /**
  * Author: Michael Lowenstein
  * Date: September 2024
  */
+
+export const routerAnimations = trigger('routerAnimations', [
+  transition('* <=> *', [
+    query(':enter, :leave', style({ position: 'absolute', width: '100%' }), { optional: true }),
+    group([
+      query(':leave', [animate('300ms ease-in', style({ opacity: 0, transform: 'translateY(-10px)' }))], { optional: true }),
+      query(':enter', [style({ opacity: 0, transform: 'translateY(10px)' }), animate('300ms ease-out', style({ opacity: 1 }))], { optional: true }),
+    ]),
+  ]),
+]);
 
 export const routeAnimations = trigger('routeAnimations', [
   transition('* => *', [

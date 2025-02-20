@@ -1,7 +1,3 @@
 <div class="page-content">
-  <mll-navbar #navbar></mll-navbar>
-  <mll-spinner *ngIf="isLoading"></mll-spinner>
-  <main [@routeAnimations]="prepareRoute(outlet)" style="position: relative;">
-    <router-outlet #outlet="outlet"></router-outlet>
-  </main>
+  <mll-layout></mll-layout>
 </div>

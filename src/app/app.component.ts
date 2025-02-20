@@ -1,19 +1,17 @@
+import { animation } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { VueWrapper } from './components/wrappers/vue.wrapper';
-import { ReactWrapper } from './components/wrappers/react.wrapper';
-import { SharedComponentsModule } from './components/shared/shared-components.module';
-import { FeatureComponentsModule } from './components/feature/feature-components.module';
-import { NavbarComponent } from './components/shared/navbar';
+import { NavbarComponent } from './components/layout/navbar';
 import { ROUTE_ORDER } from './app.routes';
 import { MyOwnMaterialModule } from './core/material';
-import { routerSlideAnimation } from './app.animations';
+import { routerSlideAnimation } from './core/ui/animations';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @Component({
   selector: 'mll-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, MyOwnMaterialModule, VueWrapper, ReactWrapper, SharedComponentsModule, FeatureComponentsModule],
+  imports: [RouterOutlet, CommonModule, MyOwnMaterialModule, LayoutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   animations: [routerSlideAnimation],

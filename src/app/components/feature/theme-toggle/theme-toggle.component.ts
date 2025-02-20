@@ -1,5 +1,5 @@
 import { Component, WritableSignal, signal } from '@angular/core';
-import { ThemeService } from '../../../theme/theme.service';
+import { ThemeService } from '../../../core/ui/services/theme.service';
 
 @Component({
   selector: 'mll-theme-toggle',
@@ -13,8 +13,9 @@ export class ThemeToggleComponent {
   constructor(private themeService: ThemeService) { }
 
   toggleTheme(): void {
-    const newDarkMode = !this.darkMode();
-    this.darkMode.set(newDarkMode);
-    this.themeService.setTheme(newDarkMode ? 'dark' : 'light');
+    // const newDarkMode = !this.darkMode();
+    // this.darkMode.set(newDarkMode);
+    // this.themeService.setTheme(newDarkMode ? 'dark' : 'light');
+    this.themeService.toggleDarkMode(document.body.classList.contains('dark-theme'));
   }
 }

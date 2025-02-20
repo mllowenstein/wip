@@ -2,7 +2,7 @@ import { ApplicationConfig } from '@angular/core';
 import { provideRouter, withPreloading, PreloadAllModules, withRouterConfig, withDebugTracing, withComponentInputBinding, withViewTransitions } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
+import { provideClientHydration, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
@@ -19,6 +19,6 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
   ]
 };
