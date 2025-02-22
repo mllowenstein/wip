@@ -1,50 +1,51 @@
-.home-banner {
-  font-family: Montserrat;
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
-.home-sub-banner {
-  margin-left: 8vw;
+.virtual-business-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: zoomIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.virtual-business-card {
+  background: #c6c7c8;
+  padding: 15px 26px;
+  border-radius: 7px;
+}
+
+.home-banner {
+  font-family: Montserrat;
+  margin-top: 16px;
 }
 
 .page-writing {
   width: 70vw;
-  margin-left: 15vw;
   word-break: break-word;
-}
-
-.services-list {
-  margin-top: 25px;
-  display: block;
-  width: 70vw;
-  border: black 1px solid;
-  margin-left: 15vw;
-
-  .service-list-item {
-    border-bottom: black 1px solid;
-    padding: 10px;
-  }
-
-  .service-list-item-first {
-    border-bottom: black 1px solid;
-    padding: 0 10px 10px 10px;
-  }
-
-  .service-list-item-last {
-    padding: 10px 10px 0 10px;
-  }
-}
-
-.bullet-point-list {
-  margin-top: 5px;
-  margin-left: 5vw;
-  margin-bottom: 15px;
-  display: block;
-}
-
-.bullet-point {
-  margin-right: 10px;
-  margin-left: 11vw;
-  padding-top: 6px;
 }
 
 footer {

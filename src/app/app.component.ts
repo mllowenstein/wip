@@ -7,11 +7,12 @@ import { ROUTE_ORDER } from './app.routes';
 import { MyOwnMaterialModule } from './core/material';
 import { routerSlideAnimation } from './core/ui/animations';
 import { LayoutComponent } from './components/layout/layout.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'mll-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, MyOwnMaterialModule, LayoutComponent],
+  imports: [CommonModule, MatDialogModule, MyOwnMaterialModule, LayoutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   animations: [routerSlideAnimation],

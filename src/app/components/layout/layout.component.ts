@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MyOwnMaterialModule } from '../../core/material';
-import { routerAnimations } from '../../core/ui/animations';
 import { FooterComponent } from './footer/footer.component';
 import { SharedComponentsModule } from '../shared/shared-components.module';
 import { NavbarComponent } from './navbar';
+import { routerAnimations } from '../../core/ui/animations';
 
 @Component({
   selector: 'mll-layout',

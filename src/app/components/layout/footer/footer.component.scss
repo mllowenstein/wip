@@ -1,11 +1,16 @@
 .footer {
   background-color: #113D60;
-  color: white;
   text-align: center;
-  padding: 10px 0;
+  min-height: 50px;
+  color: white;
 }
 
 .footer-content {
   max-width: 1200px;
-  margin: 0 auto;
+}
+
+.footnote {
+  margin-top: 15px !important;
+  margin-bottom: -10px;
+  padding: 8px;
 }

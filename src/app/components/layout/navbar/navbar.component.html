@@ -2,12 +2,14 @@
 <nav class="navbar">
   <div class="navbar-container">
     <a class="navbar-brand" href="#">
-      <img src="../../../assets/site/branding/cropped-favicon-512-32x32.png" alt="Lowenstein.CA"/>
+      <img src="../../../assets/icons/logo.png" alt="My Logo"/>
     </a>
     <button class="navbar-toggle" (click)="toggleMenu()">☰</button>
     <ul [class.active]="menuOpen" class="navbar-links">
-      <li *ngFor="let link of links" class="nav-item" (click)="activate(link.path)">
-        <a class="nav-link" routerLink="{{link.path}}">{{link.label}}</a>
+      <li *ngFor="let link of links" class="nav-item"> <!-- (click)="activate(link.path)"-->
+        <button class="link-btn" matRipple>
+          <a class="nav-link" routerLink="{{link.path}}">{{link.label}}</a>
+        </button>
       </li>
     </ul>
   </div>

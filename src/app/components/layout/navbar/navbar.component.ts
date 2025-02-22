@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { routes } from '../../../app.routes';
 import { Route, RouterModule, RouterLink } from '@angular/router';
 import { MyOwnMaterialModule } from '../../../core/material';
+import { MatRippleModule } from '@angular/material/core';
 
 export interface NavRoute {
   active: boolean;
@@ -14,7 +15,7 @@ export interface NavRoute {
 @Component({
   selector: 'mll-navbar',
   standalone: true,
-  imports: [CommonModule, RouterModule, MyOwnMaterialModule],
+  imports: [CommonModule, RouterModule, MyOwnMaterialModule, MatRippleModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -25,7 +26,6 @@ export class NavbarComponent implements OnInit {
   navs: { path: string, display: string }[] = [
     { path: 'home', display: 'Home' },
     { path: 'about-me', display: 'About Me' },
-    { path: 'blog', display: 'Blog' },
     { path: 'contact-me', display: 'Contact Me' },
   ]
 
