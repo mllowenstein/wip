@@ -1,6 +1,15 @@
 <div class="home-container">
   <div class="virtual-business-card"
   >
+    <div class="card-header">
+      <button mat-icon-button class="quick-save-btn"
+        (click)="downloadResume()" matRipple
+        [matTooltip]="quickmessage">
+        <mat-icon class="download-icon">
+          file_download
+        </mat-icon>
+      </button>
+    </div>
     <img class="home-photo" src="assets/docs/profile.jpg" alt="Michael Lowenstein - Profile Picture" />
     <h3 class="home-banner">{{ site.header!.content }}</h3>
     <h4 class="home-sub-banner">

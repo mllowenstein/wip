@@ -9,7 +9,7 @@ export interface NavRoute {
   active: boolean;
   path?: string,
   label: string;
-  options?: any;
+  ready: boolean;
 }
 
 @Component({
@@ -23,10 +23,10 @@ export interface NavRoute {
 export class NavbarComponent implements OnInit {
   links: NavRoute[] = [];
   menuOpen: boolean = false;
-  navs: { path: string, display: string }[] = [
-    { path: 'home', display: 'Home' },
-    { path: 'about-me', display: 'About Me' },
-    { path: 'contact-me', display: 'Contact Me' },
+  navs: { path: string, display: string, ready: boolean }[] = [
+    { path: 'home', display: 'Home', ready: true },
+    { path: 'about-me', display: 'About Me', ready: false },
+    { path: 'contact-me', display: 'Contact Me', ready: false },
   ]
 
   constructor() {}
@@ -38,6 +38,7 @@ export class NavbarComponent implements OnInit {
         label: this.navs.find(nv => nv.path === rt.path)?.display ?? 'N/A',
         active: currentUrl.includes(rt.path!) ? true : false,
         path: rt.path,
+        ready: this.navs.find(nv => nv.path === rt.path)?.ready ?? false
       };
       if (navroute.label !== 'N/A' && !rt.redirectTo) this.links.push(navroute);
     });

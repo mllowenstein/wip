@@ -6,17 +6,19 @@ import { SiteService } from '../../../core/services/site.service';
 import { MyOwnMaterialModule } from '../../../core/material';
 import { CommonModule } from '@angular/common';
 import { MatRippleModule } from '@angular/material/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { LandingComponent } from '../../dialogs/landing/landing.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'mll-home',
   standalone: true,
-  imports: [CommonModule, MyOwnMaterialModule, MatRippleModule],
+  imports: [CommonModule, MyOwnMaterialModule, MatDialogModule, MatTooltipModule, MatRippleModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+  quickmessage: string = "Don't forget to grab a copy of my resume` before you go!";
   [x: string]: any;
   site!: schema.SiteContent;
 
@@ -52,5 +54,9 @@ export class HomeComponent implements OnInit {
       });
       localStorage.setItem('lastvisit', now.toString());
     }
+  }
+
+  downloadResume(): void {
+    window.open('assets/docs/MichaelLowenstein_Resume.pdf', '_blank');
   }
 }

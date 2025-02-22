@@ -6,10 +6,19 @@
     </a>
     <button class="navbar-toggle" (click)="toggleMenu()">☰</button>
     <ul [class.active]="menuOpen" class="navbar-links">
-      <li *ngFor="let link of links" class="nav-item"> <!-- (click)="activate(link.path)"-->
-        <button class="link-btn" matRipple>
+      <li *ngFor="let link of links" class="nav-item">
+        <span *ngIf="link.ready">
           <a class="nav-link" routerLink="{{link.path}}">{{link.label}}</a>
-        </button>
+        </span>
+        <span *ngIf="!link.ready">
+          <a class="nav-link disabled-link"
+            routerLink="{{link.path}}"
+            matTooltip="Coming Soon!"
+          >
+            {{link.label}}
+          </a>
+        </span>
+
       </li>
     </ul>
   </div>
