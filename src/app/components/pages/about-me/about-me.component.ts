@@ -11,6 +11,7 @@ import * as animate from '../../../core/ui/animations';
 import { ModalComponent } from '../../shared/modal/modal.component';
 import { CommonModule } from '@angular/common';
 import { MessageService } from 'primeng/api';
+import { TimelineEvent } from '../../../core/ui/components/timeline/timeline.component';
 
 
 @Component({
@@ -31,6 +32,14 @@ export class AboutMeComponent {
   gridView: boolean = true;
   priceAction: any[] = [];
   displayedSkills: any[] = [];
+  timelineEvents: TimelineEvent[] = [
+    { year: '2015', title: 'Title 1', description: 'Freelancing for National Neon Ltd.', accentColor: '#41516C' },
+    { year: '2016', title: 'Title 2', description: 'SIA Wealth Management', accentColor: '#FBCA3E' },
+    { year: '2017', title: 'Title 3', description: 'Peloton Computer Enterprises', accentColor: '#E24A68' },
+    { year: '2021', title: 'Title 4', description: 'FullStack Labs', accentColor: '#1B5F8C' },
+    { year: '2024', title: 'Title 5', description: 'NCAL Engineering', accentColor: '#FBCA3E' },
+    { year: '2024', title: 'Title 6', description: 'House Analytics', accentColor: '#4CADAD' },
+  ];
 
   [x: string]: any;
   site!: SiteContent;
@@ -71,5 +80,6 @@ export class AboutMeComponent {
 
   updateSkills(event: any): void {
     this.displayedSkills = event;
+    console.log(this.displayedSkills);
   }
 }

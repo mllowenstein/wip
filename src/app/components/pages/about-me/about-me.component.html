@@ -1,32 +1,36 @@
 <div class="about-me-container">
-  <div class="card-header">
-    <img class="about-me-photo" src="assets/docs/profile.jpg" alt="Michael Lowenstein - Profile Picture" />
-  </div>
-  <h3 class="about-me-banner">{{ site.header!.content }}</h3>
-  <h4 class="about-me-sub-banner">
-    <div [innerHTML]="util.sanitizeHtml(site.subheader!.content!.toString())"></div>
-  </h4>
-  <blockquote class="page-writing">
-    <p-tabView>
-      <mll-timeline (jobHovered)="updateSkills($event)" ></mll-timeline>
-    </p-tabView>
-  </blockquote>
-  <blockquote class="page-writing">
-    <p-tabView>
-      <p-tabPanel header="Historical Price Movements">
-        <mll-grid #grid></mll-grid>
-      </p-tabPanel>
-      <p-tabPanel header="Historical Price Action">
-        <mll-chart [myData]="priceAction"></mll-chart>
-      </p-tabPanel>
-    </p-tabView>
-    <span *ngIf="gridView">
-      <mll-grid #grid class="grid-element"></mll-grid>
-    </span>
-    <span *ngIf="!gridView">
-      <mll-chart #grid class="grid-element" [myData]="stockPrices"></mll-chart>
-    </span>
-  </blockquote>
+  <section class="top-layer">
+    <div class="card-header">
+      <img class="about-me-photo" src="assets/docs/profile.jpg" alt="Michael Lowenstein - Profile Picture" />
+    </div>
+    <h3 class="about-me-banner">{{ site.header!.content }}</h3>
+    <h4 class="about-me-sub-banner">
+      <div [innerHTML]="util.sanitizeHtml(site.subheader!.content!.toString())"></div>
+    </h4>
+  </section>
+  <section class="middle-layer">
+    <blockquote class="page-writing left-section">
+      <p-tabView>
+        <mll-timeline (jobHovered)="updateSkills($event)"></mll-timeline>
+      </p-tabView>
+    </blockquote>
+    <blockquote class="page-writing right-section">
+      <p-tabView>
+        <p-tabPanel header="Historical Price Movements">
+          <mll-grid #grid></mll-grid>
+        </p-tabPanel>
+        <p-tabPanel header="Historical Price Action">
+          <mll-chart [myData]="priceAction"></mll-chart>
+        </p-tabPanel>
+      </p-tabView>
+      <span *ngIf="gridView">
+        <mll-grid #grid class="grid-element"></mll-grid>
+      </span>
+      <span *ngIf="!gridView">
+        <mll-chart #grid class="grid-element" [myData]="stockPrices"></mll-chart>
+      </span>
+    </blockquote>
+  </section>
   <footer>
     <div [innerHTML]="util.sanitizeHtml(site.footer!.content!.toString())"></div>
     <div class="action-items">

@@ -5,16 +5,19 @@ import { MyOwnMaterialModule } from '../../../core/material';
 import { MatButtonModule } from '@angular/material/button';
 
 Chart.register(...registerables);
+import { AgChartsModule, AgCharts } from 'ag-charts-angular';
+import { AgChartOptions } from 'ag-charts-community';
 
 @Component({
   selector: 'mll-chart',
   standalone: true,
   templateUrl: './chart.compoonent.html',
   styleUrl: './chart.compoonent.scss',
-  imports: [CommonModule, MyOwnMaterialModule, MatButtonModule],
+  imports: [CommonModule, MyOwnMaterialModule, MatButtonModule, AgChartsModule],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ChartComponent implements OnInit {
+  public chartoptions!: AgChartOptions;
   @Input() myData: any[] = [];
   chart!: Chart;
 

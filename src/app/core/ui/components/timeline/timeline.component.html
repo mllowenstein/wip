@@ -1,6 +1,8 @@
-<div class="timeline">
-  <div *ngFor="let job of jobs" class="timeline-item" @slideInLeft (mouseenter)="onHover(job)">
-    <h4>{{ job.title }}</h4>
-    <p>{{ job.company }} ({{ job.year }})</p>
-  </div>
-</div>
+<h1>Timeline</h1>
+<ul>
+  <li *ngFor="let event of events" [style.--accent-color]="event.accentColor">
+    <div class="date">{{ event.year }}</div>
+    <div class="title">{{ event.title }}</div>
+    <div class="descr">{{ event.description }}</div>
+  </li>
+</ul>

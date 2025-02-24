@@ -1,6 +1,7 @@
 // home.component.scss
 .about-me-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -10,6 +11,25 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   animation: fadeIn 1s ease-in-out;
+}
+
+.top-layer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.middle-layer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-section {
+  width: 30vw !important;
+}
+
+.right-section {
+  width: 50vw !important;
 }
 
 h3 {
@@ -64,7 +84,6 @@ p {
 }
 
 .page-writing {
-  width: 45vw;
   word-break: break-word;
 }
 

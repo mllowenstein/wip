@@ -7,12 +7,28 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { GridOptions } from 'ag-grid-community';
 import { CustomCellRendererComponent } from './custom/custom-cell-renderer.component';
 import { SkillMetric, EducationMetric } from '../../../data/schema';
 import { SkillsMetrics } from '../../../data/constants';
-import { AgGridModule } from 'ag-grid-angular';
+import { AgGridModule, AgGridAngular } from 'ag-grid-angular';
+import {
+  ColDef,
+  ColGroupDef,
+  GridApi,
+  GridOptions,
+  GridReadyEvent,
+  ModuleRegistry,
+  createGrid
+} from 'ag-grid-community';
 
+export interface IRow {
+  name: string;
+  group: string[];
+  rating: number;
+  years: number;
+  comments: string;
+  badge: any;
+}
 @Component({
   selector: 'mll-grid',
   standalone: true,
@@ -24,12 +40,12 @@ import { AgGridModule } from 'ag-grid-angular';
 export class GridComponent implements OnInit {
   myeducation: EducationMetric[] = [];
   myskills: SkillMetric[] = SkillsMetrics;
-  columnDefs = [
-    { field: 'name', sortable: true, filter: true, visible: true },
-    { field: 'group', sortable: false, filter: true, visible: false },
-    { field: 'years', sortable: true, filter: true, visible: true },
-    { field: 'rating', sortable: true, filter: true, visible: true },
-    { field: 'badge', sortable: false, filter: false, visible: true },
+  columnDefs: ColDef[] = [
+    { field: 'name', headerName: 'Skill', sortable: true, filter: true, hide: false },
+    { field: 'group', headerName: 'Skill', sortable: false, filter: true, hide: true },
+    { field: 'years', headerName: 'Years of Experience', sortable: true, filter: true, hide: false },
+    { field: 'rating', headerName: 'Level', sortable: true, filter: true, hide: false, cellRenderer: this.progressBarRenderer },
+    { field: 'badge', headerName: 'Responsibility', sortable: false, filter: false, hide: false, cellRenderer: this.badgeRenderer },
   ];
   rowData = this.myskills.map(sm => {
     return {
@@ -51,8 +67,6 @@ export class GridComponent implements OnInit {
     customCellRenderer: CustomCellRendererComponent,
   };
   gridOptions: GridOptions = {
-    pagination: true,
-    paginationPageSize: 10,
     domLayout: 'autoHeight',
     suppressContextMenu: true,
     columnMenu: 'new',
@@ -61,8 +75,11 @@ export class GridComponent implements OnInit {
     tooltipShowDelay: 500,
     tooltipHideDelay: 1500,
     headerHeight: 60,
+    columnHoverHighlight: true,
+    suppressRowHoverHighlight: true,
     includeHiddenColumnsInAdvancedFilter: true,
   };
+  gridApi!: GridApi;
 
   constructor() { }
 
@@ -71,8 +88,36 @@ export class GridComponent implements OnInit {
     console.log(this.rowData);
   }
 
+  progressBarRenderer(params: any): any {
+    return `
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: ${params.value}%" aria-valuenow="${params.value}" aria-valuemin="0" aria-valuemax="100">
+          ${params.value}
+        </div>
+      </div>
+    `;
+  }
+
+  badgeRenderer(params: any): any {
+    console.log(params);
+    const levelMap: { [key: string]: number } = {
+      'Junior': 49,
+      'Junior/Intermediate': 50,
+      'Intermediate': 60,
+      'Intermediate/Senior': 70,
+      'Senior': 80,
+      'Expert': 90
+    };
+    for (const level in levelMap) {
+      if (params.data.rating >= levelMap[level]) {
+        console.log(levelMap[level]);
+      }
+    }
+  }
+
   onGridReady(params: any): void {
     console.log(params);
     params.api.sizeColumnsToFit();
+    params.api.sizeColumnsToA
   }
 }
