@@ -8,11 +8,15 @@ import { MyOwnMaterialModule } from './core/material';
 import { routerSlideAnimation } from './core/ui/animations';
 import { LayoutComponent } from './components/layout/layout.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { ToastModule } from 'primeng/toast';
+import { TabViewModule } from 'primeng/tabview';
+import { AgGridModule } from 'ag-grid-angular';
 
 @Component({
   selector: 'mll-root',
   standalone: true,
-  imports: [CommonModule, MatDialogModule, MyOwnMaterialModule, LayoutComponent],
+  imports: [CommonModule, MatDialogModule, AgGridModule, TabViewModule, MyOwnMaterialModule, LayoutComponent, MatButtonModule, ToastModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   animations: [routerSlideAnimation],
@@ -24,7 +28,9 @@ export class AppComponent {
   title = 'wip';
   isLoading = false;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router
+  ) {
     // Handle navigation events
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {

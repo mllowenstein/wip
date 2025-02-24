@@ -29,22 +29,24 @@ export const ABOUT_ME_SECTIONS: SectionNav[] = [
 ];
 
 export const SkillsMetrics: SkillMetric[] = [
-  { id: 1, name: 'Angular', rating: 100, comments: '' },
-  { id: 2, name: 'Typescript', rating: 100, comments: '' },
-  { id: 3, name: 'Node.JS/Express', rating: 100, comments: '' },
-  { id: 4, name: '.NET/Core C#', rating: 95, comments: '' },
-  { id: 5, name: 'NestJS', rating: 95, comments: '' },
-  { id: 6, name: 'Python', rating: 90, comments: '' },
-  { id: 7, name: 'Test Automation', rating: 90, comments: '' },
-  { id: 8, name: 'Perl Backend Development & Scripting', rating: 90, comments: '' },
-  { id: 9, name: 'Database Administration', rating: 90, comments: '' },
-  { id: 10, name: 'AI & ML Integrations', rating: 85, comments: '' },
-  { id: 11, name: 'Linux Server Administration', rating: 75, comments: '' },
-  { id: 12, name: 'Shell Scripting', rating: 80, comments: '' },
-  { id: 13, name: 'Docker', rating: 50, comments: '' },
-  { id: 14, name: 'Kubernetes', rating: 50, comments: '' },
+  { id: 1, name: 'Angular', rating: 100, years: 8, group: ['Frontend'], comments: '' },
+  { id: 1, name: 'Vue', rating: 85, years: 5, group: ['Frontend'], comments: '' },
+  { id: 1, name: 'React', rating: 85, years: 5, group: ['Frontend'], comments: '' },
+  { id: 1, name: 'Next.JS', rating: 80, years: 4, group: ['Frontend'], comments: '' },
+  { id: 2, name: 'Typescript', rating: 100, years: 8, group: ['Frontend', 'Backend', 'Fullstack'], comments: '' },
+  { id: 3, name: 'Node.JS/Express', rating: 100, years: 9, group: ['Backend'], comments: '' },
+  { id: 4, name: '.NET/Core C#', rating: 95, years: 8, group: ['Backend'], comments: '' },
+  { id: 5, name: 'NestJS', rating: 95, years: 6, group: ['Backend'], comments: '' },
+  { id: 6, name: 'Python', rating: 90, years: 9, group: ['Backend'], comments: '' },
+  { id: 7, name: 'Test Automation', rating: 90, years: 7, group: ['Backend'], comments: '' },
+  { id: 8, name: 'Perl Backend Development & Scripting', rating: 90, years: 5, group: ['Backend'], comments: '' },
+  { id: 9, name: 'Database Administration', rating: 90, years: 5, group: ['Backend'], comments: '' },
+  { id: 10, name: 'AI & ML Integrations', rating: 85, years: 3, group: ['Backend'], comments: '' },
+  { id: 11, name: 'Linux Server Administration', rating: 75, years: 6, group: ['Backend'], comments: '' },
+  { id: 12, name: 'Shell Scripting', rating: 80, years: 4, group: ['Backend'], comments: '' },
+  { id: 13, name: 'Docker', rating: 50, years: 4, group: ['Backend'], comments: '' },
+  { id: 14, name: 'Kubernetes', rating: 50, years: 2, group: ['Backend'], comments: '' },
 ];
-
 export const HOME: SiteContent = {
   id: 'home',
   page: 'Home',
@@ -71,7 +73,7 @@ export const ABOUT_ME: SiteContent = {
   },
   bulletpoints: [],
   header: {
-    content: "Welcome"
+    content: "Some information about my career"
   },
   subheader: {
     content: "Back to the top, or get in touch on Contact Me."

@@ -1,0 +1,12 @@
+<p-dialog [(visible)]="visible" [modal]="true" [header]="header">
+  <p>{{ message }}</p>
+  <p-footer>
+    <button
+      pButton
+      label="Close Me"
+      icon="pi pi-times"
+      class="p-button-=secondary"
+      (click)="closeDialog()">
+    </button>
+  </p-footer>
+</p-dialog>

@@ -1,5 +1,5 @@
 import { Component, WritableSignal, signal } from '@angular/core';
-import { ThemeService } from '../../../core/ui/services/theme.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'mll-theme-toggle',

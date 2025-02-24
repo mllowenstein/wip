@@ -43,6 +43,7 @@ export interface SectionNav {
   value: string;
   order: number;
 }
+
 export interface Section {
   label: string;
   id: number;
@@ -54,7 +55,9 @@ export interface SkillMetric {
   standalone?: boolean;
   comments?: string;
   context?: number;
+  group?: string[];
   rating: number;
+  years: number;
   name: string;
   id?: number;
 }

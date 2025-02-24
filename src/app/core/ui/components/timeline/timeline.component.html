@@ -1,0 +1,6 @@
+<div class="timeline">
+  <div *ngFor="let job of jobs" class="timeline-item" @slideInLeft (mouseenter)="onHover(job)">
+    <h4>{{ job.title }}</h4>
+    <p>{{ job.company }} ({{ job.year }})</p>
+  </div>
+</div>

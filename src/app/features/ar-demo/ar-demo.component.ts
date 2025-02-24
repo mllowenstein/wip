@@ -1,13 +1,15 @@
 import { Component, ElementRef, inject, Renderer2, ViewChild, signal } from '@angular/core';
+import WebXRPolyfill from 'webxr-polyfill';
 import * as THREE from 'three';
 
+new WebXRPolyfill();
+
 @Component({
-  selector: 'app-ar-demo',
+  selector: 'ml-ar-demo',
   standalone: true,
   template: `<button (click)="startAR()">Start AR</button> <canvas #arCanvas></canvas>`,
   styles: [`
     button { position: fixed; top: 20px; left: 20px; z-index: 10; }
-    canvas { width: 100vw; height: 100vh; display: block; }
   `]
 })
 export class ARDemoComponent {

@@ -25,8 +25,8 @@ export class NavbarComponent implements OnInit {
   menuOpen: boolean = false;
   navs: { path: string, display: string, ready: boolean }[] = [
     { path: 'home', display: 'Home', ready: true },
-    { path: 'about-me', display: 'About Me', ready: false },
-    { path: 'contact-me', display: 'Contact Me', ready: false },
+    { path: 'about-me', display: 'About Me', ready: true },
+    { path: 'contact-me', display: 'Contact Me', ready: true },
   ]
 
   constructor() {}

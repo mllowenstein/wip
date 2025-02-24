@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
-import { MyOwnMaterialModule } from '../../../material';
+import { MyOwnMaterialModule } from '../../../core/material';
 
 @Component({
   selector: 'mll-skeleton',

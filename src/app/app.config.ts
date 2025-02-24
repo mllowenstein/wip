@@ -4,6 +4,8 @@ import { provideRouter, withPreloading, PreloadAllModules, withRouterConfig, wit
 import { routes } from './app.routes';
 import { provideClientHydration, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { MessageService } from 'primeng/api';  // Service for Toast Messages
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,6 +21,8 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     provideClientHydration(),
-    provideAnimationsAsync(),
+    provideHttpClient(withInterceptors([])), // Required for PrimeNG components using HTTP
+    provideAnimationsAsync(),  // Required for animations in PrimeNG
+    MessageService  // PrimeNG Service for Toast Notifications
   ]
 };

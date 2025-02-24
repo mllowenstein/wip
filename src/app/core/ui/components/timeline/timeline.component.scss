@@ -1,0 +1,17 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.timeline-item {
+  padding: 15px;
+  border-left: 4px solid #007bff;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.timeline-item:hover {
+  background: #e9ecef;
+}
