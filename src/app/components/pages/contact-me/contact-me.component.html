@@ -5,10 +5,6 @@
   <h4 class="contact-me-sub-banner">
     <div [innerHTML]="util.sanitizeHtml(site.subheader!.content!.toString())"></div>
   </h4>
-
-  <blockquote class="page-writing">
-    <div [innerHTML]="util.sanitizeHtml(site.body!.content!.toString())"></div>
-  </blockquote>
   <blockquote class="page-writing">
     <form [formGroup]="contactForm" (ngSubmit)="processContactForm()">
       <div class="form-group mb-3">

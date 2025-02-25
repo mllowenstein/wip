@@ -1,22 +1,17 @@
 import { animation } from '@angular/animations';
-import { Component, ViewChild } from '@angular/core';
+import { Component, signal, ViewChild } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/layout/navbar';
 import { ROUTE_ORDER } from './app.routes';
 import { MyOwnMaterialModule } from './core/material';
 import { routerSlideAnimation } from './core/ui/animations';
-import { LayoutComponent } from './components/layout/layout.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
-import { ToastModule } from 'primeng/toast';
-import { TabViewModule } from 'primeng/tabview';
-import { AgGridModule } from 'ag-grid-angular';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @Component({
   selector: 'mll-root',
   standalone: true,
-  imports: [CommonModule, MatDialogModule, AgGridModule, TabViewModule, MyOwnMaterialModule, LayoutComponent, MatButtonModule, ToastModule],
+  imports: [CommonModule, MyOwnMaterialModule, PortfolioComponent, NavbarComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   animations: [routerSlideAnimation],
@@ -39,6 +34,12 @@ export class AppComponent {
         this.isLoading = false; // Hide spinner on navigation end
       }
     });
+  }
+
+  sidebarVisible = signal(false);
+
+  onExplore(): void {
+    this.sidebarVisible.set(true);
   }
 
   prepareRoute(outlet: RouterOutlet): any {

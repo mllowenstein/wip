@@ -8,29 +8,22 @@
       <div [innerHTML]="util.sanitizeHtml(site.subheader!.content!.toString())"></div>
     </h4>
   </section>
-  <section class="middle-layer">
-    <blockquote class="page-writing left-section">
-      <p-tabView>
-        <mll-timeline (jobHovered)="updateSkills($event)"></mll-timeline>
-      </p-tabView>
-    </blockquote>
-    <blockquote class="page-writing right-section">
-      <p-tabView>
-        <p-tabPanel header="Historical Price Movements">
+  <mat-tab-group>
+    <mat-tab label="Skills & Experience">
+      <div class="about-me-tab-container">
+        <div class="timeline-container">
+          <mll-timeline (jobHovered)="updateSkills($event)">
+          </mll-timeline>
+        </div>
+        <div class="grid-container">
           <mll-grid #grid></mll-grid>
-        </p-tabPanel>
-        <p-tabPanel header="Historical Price Action">
-          <mll-chart [myData]="priceAction"></mll-chart>
-        </p-tabPanel>
-      </p-tabView>
-      <span *ngIf="gridView">
-        <mll-grid #grid class="grid-element"></mll-grid>
-      </span>
-      <span *ngIf="!gridView">
-        <mll-chart #grid class="grid-element" [myData]="stockPrices"></mll-chart>
-      </span>
-    </blockquote>
-  </section>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Historical BTC Price Movement">
+      <mll-chart [myData]="priceAction"></mll-chart>
+    </mat-tab>
+  </mat-tab-group>
   <footer>
     <div [innerHTML]="util.sanitizeHtml(site.footer!.content!.toString())"></div>
     <div class="action-items">
