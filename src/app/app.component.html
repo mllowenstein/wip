@@ -1,8 +1,8 @@
 <div class="page-content">
-  <mll-navbar #navbar></mll-navbar>
-  <main class="portfolio-content">
-    <mll-portfolio>
-        <router-outlet></router-outlet>
-    </mll-portfolio>
-  </main>
+  <span *ngIf="isLoading">
+    <mll-spinner class="init-loader"></mll-spinner>
+  </span>
+  <span *ngIf="!isLoading">
+    <mll-layout></mll-layout>
+  </span>
 </div>

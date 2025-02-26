@@ -6,7 +6,7 @@ import { MyOwnMaterialModule } from '../../../core/material';
   selector: 'mll-skills',
   standalone: true,
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss',
+  styleUrls: ['./skills.component.scss', '../../../../styles.scss'],
   imports: [CommonModule, MyOwnMaterialModule],
 })
 export class SkillsComponent {

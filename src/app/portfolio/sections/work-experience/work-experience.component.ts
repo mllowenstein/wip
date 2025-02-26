@@ -6,7 +6,7 @@ import { MyOwnMaterialModule } from '../../../core/material';
   selector: 'mll-work-experience',
   standalone: true,
   templateUrl: './work-experience.component.html',
-  styleUrl: './work-experience.component.scss',
+  styleUrls: ['./work-experience.component.scss', '../../../../styles.scss'],
   imports: [CommonModule, MyOwnMaterialModule],
 })
 export class WorkExperienceComponent {

@@ -6,7 +6,7 @@ import { MyOwnMaterialModule } from '../../../core/material';
   selector: 'mll-interests',
   standalone: true,
   templateUrl: './interests.component.html',
-  styleUrl: './interests.component.scss',
+  styleUrls: ['./interests.component.scss', '../../../../styles.scss'],
   imports: [CommonModule, MyOwnMaterialModule],
 })
 export class InterestsComponent {

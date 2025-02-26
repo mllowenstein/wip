@@ -11,7 +11,7 @@ import { ContactComponent } from './contact/contact.component';
   standalone: true,
   imports: [CommonModule, MyOwnMaterialModule, WorkExperienceComponent, SkillsComponent, InterestsComponent, ContactComponent],
   templateUrl: './sections.component.html',
-  styleUrl: './sections.component.scss',
+  styleUrls: ['./sections.component.scss', '../../../styles.scss'],
 })
 export class SectionsComponent {
   private highlightTimeout: any;

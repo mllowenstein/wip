@@ -1,15 +1,12 @@
 import { Routes } from '@angular/router';
-import { LandingGuard } from './components/dialogs/landing/landing.guard';
-
-export const ROUTE_ORDER = [
-  'HomePage',
-  'AboutMePage',
-  'ContactMePage'
-];
+import { LandingGuard } from './support/landing/landing.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full', data: { animation: '*' } },
-  { path: 'home', canActivate: [LandingGuard], data: { animation: 'HomePage' }, loadComponent: () => import('./components/pages/home/home.component').then(comp => comp.HomeComponent) },
-  { path: 'about-me', data: { animation: 'AboutMePage' }, loadComponent: () => import('./components/pages/about-me/about-me.component').then(comp => comp.AboutMeComponent) },
-  { path: 'contact-me', data: { animation: 'ContactMePage' }, loadComponent: () => import('./components/pages/contact-me/contact-me.component').then(comp => comp.ContactMeComponent) },
+  {
+    path: 'portfolio',
+    canActivate: [LandingGuard],
+    data: { animation: 'PortfolioComponent' },
+    loadComponent: () => import('./portfolio/portfolio.component').then(comp => comp.PortfolioComponent)
+  },
 ];

@@ -6,7 +6,7 @@ import { MyOwnMaterialModule } from '../../core/material';
   selector: 'mll-sidebar',
   standalone: true,
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss',
+  styleUrls: ['./sidebar.component.scss', '../../../styles.scss'],
   imports: [CommonModule, MyOwnMaterialModule],
 })
 export class SidebarComponent {

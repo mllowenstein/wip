@@ -1,6 +1,5 @@
-<div class="portfolio-container">
+<div class="sections-container">
   <mll-business-card (explore)="onExplore()"></mll-business-card>
-  <mll-sidebar [visible]="sidebarVisible()"></mll-sidebar>
+  <mll-sidebar #sidebar [visible]="sidebarVisible()"></mll-sidebar>
   <mll-sections #sections></mll-sections>
-  <router-outlet></router-outlet>
 </div>

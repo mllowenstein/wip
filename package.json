@@ -40,6 +40,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.7",
     "human-regex": "^2.1.4",
+    "ng2-charts": "^8.0.0",
     "ngx-bootstrap": "^19.0.2",
     "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",

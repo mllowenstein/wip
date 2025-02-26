@@ -6,7 +6,7 @@ import { MyOwnMaterialModule } from '../../../core/material';
   selector: 'mll-contact',
   standalone: true,
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss',
+  styleUrls: ['./contact.component.scss', '../../../../styles.scss'],
   imports: [CommonModule, MyOwnMaterialModule],
 })
 export class ContactComponent {

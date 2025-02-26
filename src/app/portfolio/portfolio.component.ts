@@ -10,7 +10,7 @@ import { BusinessCardComponent } from './business-card/business-card.component';
   selector: 'mll-portfolio',
   standalone: true,
   templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss',
+  styleUrls: ['./portfolio.component.scss', '../../styles.scss'],
   imports: [CommonModule, MyOwnMaterialModule, BusinessCardComponent, SidebarComponent, SectionsComponent, RouterOutlet]
 })
 export class PortfolioComponent {

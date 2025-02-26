@@ -1,0 +1,35 @@
+
+.navbar {
+  background: #183b63;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Montserrat';
+  height: 44px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin: 0 8px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+left-menu {
+  text-align: left;
+}
+
+reight-menu {
+  text-align: right;
+}
+.home-nav {
+  float: left;
+}
