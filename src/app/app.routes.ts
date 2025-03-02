@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-// import { LandingGuard } from './support/landing/landing.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'portfolio', pathMatch: 'full', data: { animation: '*' } },
@@ -27,5 +26,10 @@ export const routes: Routes = [
     path: 'pocs',
     data: { animation: 'PoCs' },
     loadComponent: () => import('./pocs/pocs.component').then(m => m.PocsComponent)
+  },
+  {
+    path: '**',
+    data: { animation: 'Error' },
+    loadComponent: () => import('./error/error.component').then(m => m.ErrorComponent)
   },
 ];

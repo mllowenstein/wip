@@ -7,7 +7,7 @@ import { TableComponent } from '../../../core/ui/components/table/table.componen
   selector: 'mll-work-experience',
   standalone: true,
   templateUrl: './work-experience.component.html',
-  styleUrls: ['./work-experience.component.scss', '../../../../styles.scss'],
+  styleUrls: ['./work-experience.component.scss'], //../../../../styles.scss'],
   imports: [CommonModule, MyOwnMaterialModule, TableComponent],
 })
 export class WorkExperienceComponent  implements OnInit {

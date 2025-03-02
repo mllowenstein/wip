@@ -7,7 +7,7 @@ import { GridComponent } from '../../../core/ui/components/grid/grid.component';
   selector: 'mll-skills',
   standalone: true,
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.scss', '../../../../styles.scss'],
+  styleUrls: ['./skills.component.scss'], //, '../../../../styles.scss'],
   imports: [CommonModule, MyOwnMaterialModule, GridComponent],
 })
 export class SkillsComponent {

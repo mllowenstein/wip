@@ -1,11 +1,8 @@
 <nav class="navbar">
   <div class="navbar-container">
     <a class="navbar-brand" href="#">
-      <img src="../../../assets/site/branding/cropped-favicon-512-32x32.png" alt="FricLowenstein & Co." />
+      <img src="../../../assets/docs/profile.jpg" alt="Headshot" />
     </a>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
     <button class="navbar-toggle" (click)="toggleMenu()">☰</button>
     <ul [class.active]="menuOpen" class="navbar-links">
       <li *ngFor="let link of links" class="nav-item" (click)="activate(link.path)"

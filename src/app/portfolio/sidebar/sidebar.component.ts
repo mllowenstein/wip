@@ -8,7 +8,7 @@ import { SectionNav } from '../../core/data/schema';
   selector: 'mll-sidebar',
   standalone: true,
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss', '../../../styles.scss'],
+  styleUrls: ['./sidebar.component.scss'], //, '../../../styles.scss'],
   imports: [CommonModule, MyOwnMaterialModule],
 })
 export class SidebarComponent {

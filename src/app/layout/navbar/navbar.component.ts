@@ -15,7 +15,7 @@ export interface NavRoute {
   selector: 'mll-navbar',
   standalone: true,
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'], //, '../../../styles.scss'],
+  styleUrls: ['./navbar.component.scss'], //, '../../../'],
   imports: [CommonModule, RouterModule, MyOwnMaterialModule],
 })
 export class NavbarComponent {

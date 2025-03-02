@@ -1,46 +1,6 @@
-
-// .navbar {
-//   background: #183b63;
-//   color: white;
-//   padding: 10px 20px;
-//   display: flex;
-//   justify-content: space-between;
-//   font-family: 'Montserrat';
-//   height: 44px;
-// }
-
-// .navbar ul {
-//   list-style: none;
-//   display: flex;
-// }
-
-// .navbar ul li {
-//   margin: 0 8px;
-// }
-
-// .navbar ul li a {
-//   color: white;
-//   text-decoration: none;
-// }
-
-// left-menu {
-//   text-align: left;
-// }
-
-// reight-menu {
-//   text-align: right;
-// }
-// .home-nav {
-//   float: left;
-// }
-
 .navbar {
   background-color: #183b63 !important;
   margin-bottom: 20px;
-}
-
-.navbar-brand {
-  padding-left: 20px;
 }
 
 .navbar {
@@ -60,10 +20,15 @@
 }
 
 .navbar-brand {
+  text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
-  text-decoration: none;
+  padding-left: 8px;
   color: white;
+
+  img {
+    width: 44px !important;
+  }
 }
 
 .navbar-toggle {

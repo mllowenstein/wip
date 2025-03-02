@@ -8,7 +8,7 @@ import { ApiService } from '../core/services/api.service';
   selector: 'mll-contact',
   standalone: true,
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss', '../../../../styles.scss'],
+  styleUrls: ['./contact.component.scss'], //, '../../styles.scss'],
   imports: [CommonModule, MyOwnMaterialModule, FormsModule, ReactiveFormsModule],
   providers: [ApiService]
 })

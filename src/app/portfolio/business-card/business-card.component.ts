@@ -6,7 +6,7 @@ import { MyOwnMaterialModule } from '../../core/material';
   selector: 'mll-business-card',
   standalone: true,
   templateUrl: './business-card.component.html',
-  styleUrls: ['./business-card.component.scss', '../../../styles.scss'],
+  styleUrls: ['./business-card.component.scss'], //, '../../../styles.scss'],
   imports: [CommonModule, MyOwnMaterialModule],
 })
 export class BusinessCardComponent implements OnInit {

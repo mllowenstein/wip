@@ -11,7 +11,7 @@ import { SafeHtmlUtil } from '../../core/utils/safe-html.util';
   standalone: true,
   imports: [CommonModule, MyOwnMaterialModule, WorkExperienceComponent, SkillsComponent, EducationComponent],
   templateUrl: './sections.component.html',
-  styleUrls: ['./sections.component.scss', '../../../styles.scss'],
+  styleUrls: ['./sections.component.scss'],
 })
 export class SectionsComponent {
   @Input() activated!: string;
