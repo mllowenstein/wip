@@ -1,16 +1,19 @@
 import { Component, ElementRef, inject, Renderer2, ViewChild, signal } from '@angular/core';
 import WebXRPolyfill from 'webxr-polyfill';
 import * as THREE from 'three';
+import { CommonModule } from '@angular/common';
+import { MyOwnMaterialModule } from '../../core/material';
 
 new WebXRPolyfill();
 
 @Component({
-  selector: 'ml-ar-demo',
+  selector: 'mll-ar-demo',
   standalone: true,
   template: `<button (click)="startAR()">Start AR</button> <canvas #arCanvas></canvas>`,
   styles: [`
     button { position: fixed; top: 20px; left: 20px; z-index: 10; }
-  `]
+  `],
+  imports: [CommonModule, MyOwnMaterialModule]
 })
 export class ARDemoComponent {
   private renderer!: THREE.WebGLRenderer;
@@ -47,23 +50,29 @@ export class ARDemoComponent {
   }
 
   async startAR() {
-    if (!navigator.xr) {
-      alert("WebXR is not supported on this device/browser.");
-      return;
-    }
-
-    try {
-      this.xrSession = await navigator.xr.requestSession('immersive-ar', {
-        requiredFeatures: ['local-floor']
-      });
-
-      this.renderer.xr.setSession(this.xrSession);
-      this.isARActive.set(true);
-      this.renderAR();
-    } catch (error) {
-      console.error("AR Session failed:", error);
-    }
+  if (!navigator.xr) {
+    alert("WebXR is not supported on this device/browser.");
+    return;
   }
+
+  const supported = await navigator.xr.isSessionSupported('immersive-ar');
+  if (!supported) {
+    alert("AR mode is not supported on this device.");
+    return;
+  }
+
+  try {
+    this.xrSession = await navigator.xr.requestSession('immersive-ar', {
+      requiredFeatures: ['local-floor']
+    });
+
+    this.renderer.xr.setSession(this.xrSession);
+    this.isARActive.set(true);
+    this.renderAR();
+  } catch (error) {
+    console.error("AR Session failed:", error);
+  }
+}
 
   private renderAR() {
     const renderLoop = () => {

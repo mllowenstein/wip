@@ -1,25 +1,20 @@
-import { SiteContent, SectionNav, SkillMetric } from "../schema";
+import { SiteContent, SectionNav, SkillMetric, TimelineEvent, EducationMetric, BlogPost } from "../schema";
 
-export const ABOUT_ME_SECTIONS: SectionNav[] = [
+export const ABOUT_ME_NAVS: SectionNav[] = [
+  {
+    display: 'Work Experience',
+    value: 'workexperience',
+    order: 1,
+  },
   {
     display: 'Skills & Interests',
     value: 'skillsandinterests',
     order: 1,
   },
   {
-    display: 'Work Experience',
-    value: 'workexperience',
-    order: 2,
-  },
-  {
     display: 'Education',
     value: 'education',
     order: 2,
-  },
-  {
-    display: 'Memorable Accomplishments & Challenges',
-    value: 'memorableevents',
-    order: 3,
   },
   {
     display: 'Summary',
@@ -28,25 +23,96 @@ export const ABOUT_ME_SECTIONS: SectionNav[] = [
   },
 ];
 
+export const TOP_OF_ABOUT_ME: string = 'workexperience';
+
+export const WORK_METRICS: TimelineEvent[] = [
+  {
+    id: 0,
+    name: 'Freelance Web Developer',
+    date: '2015 - 2016',
+    description: 'National Neon Ltd. - Growing Sign Manufacturing Business with clients globally now.'
+  }, {
+    id: 1,
+    name: 'Software Developer & Data Analyst',
+    date: '2016 - 2017',
+    description: 'SIA Wealth Management - Assisted in the rebuild & design of the new membership portal and constructed a library of stock market data-visualization tools'
+  },{
+    id: 2,
+    name: 'Freelance Web Developer',
+    date: '2017 - 2022',
+    description: 'Peloton Computer Enterprises - Software Engineer on ProdView and LandView Products as well as the CORE Platform Development Team.'
+  }, {
+    id: 3,
+    name: 'Senior Software Engineer',
+    date: '2022 - 2024',
+    description: 'FullStack Labs - '
+  },{
+    id: 4,
+    name: 'Senior Software Engineer',
+    date: '2024 - Present',
+    description: 'NCAL Engineering - Independent Contracting providing custom software solutions to optimize business operations and reduce logistical bottlenecks through automation.'
+  }, {
+    id: 5,
+    name: 'Senior Backend Software Engineer',
+    date: '2024 - Present',
+    description: 'College House @ House Analytics - '
+  },
+]
+
+
 export const SkillsMetrics: SkillMetric[] = [
   { id: 1, name: 'Angular', rating: 100, years: 8, group: ['Frontend'], comments: '' },
-  { id: 1, name: 'Vue', rating: 85, years: 5, group: ['Frontend'], comments: '' },
-  { id: 1, name: 'React', rating: 85, years: 5, group: ['Frontend'], comments: '' },
-  { id: 1, name: 'Next.JS', rating: 80, years: 4, group: ['Frontend'], comments: '' },
-  { id: 2, name: 'Typescript', rating: 100, years: 8, group: ['Frontend', 'Backend', 'Fullstack'], comments: '' },
-  { id: 3, name: 'Node.JS/Express', rating: 100, years: 9, group: ['Backend'], comments: '' },
-  { id: 4, name: '.NET/Core C#', rating: 95, years: 8, group: ['Backend'], comments: '' },
-  { id: 5, name: 'NestJS', rating: 95, years: 6, group: ['Backend'], comments: '' },
-  { id: 6, name: 'Python', rating: 90, years: 9, group: ['Backend'], comments: '' },
-  { id: 7, name: 'Test Automation', rating: 90, years: 7, group: ['Backend'], comments: '' },
-  { id: 8, name: 'Perl Backend Development & Scripting', rating: 90, years: 5, group: ['Backend'], comments: '' },
-  { id: 9, name: 'Database Administration', rating: 90, years: 5, group: ['Backend'], comments: '' },
-  { id: 10, name: 'AI & ML Integrations', rating: 85, years: 3, group: ['Backend'], comments: '' },
-  { id: 11, name: 'Linux Server Administration', rating: 75, years: 6, group: ['Backend'], comments: '' },
-  { id: 12, name: 'Shell Scripting', rating: 80, years: 4, group: ['Backend'], comments: '' },
-  { id: 13, name: 'Docker', rating: 50, years: 4, group: ['Backend'], comments: '' },
-  { id: 14, name: 'Kubernetes', rating: 50, years: 2, group: ['Backend'], comments: '' },
+  { id: 2, name: 'Vue', rating: 85, years: 5, group: ['Frontend'], comments: '' },
+  { id: 3, name: 'React', rating: 85, years: 5, group: ['Frontend'], comments: '' },
+  { id: 4, name: 'Next.JS', rating: 80, years: 4, group: ['Frontend'], comments: '' },
+  { id: 5, name: 'Typescript', rating: 100, years: 8, group: ['Frontend', 'Backend', 'Fullstack'], comments: '' },
+  { id: 6, name: 'Node.JS/Express', rating: 100, years: 9, group: ['Backend'], comments: '' },
+  { id: 7, name: '.NET/Core C#', rating: 95, years: 8, group: ['Backend'], comments: '' },
+  { id: 8, name: 'NestJS', rating: 95, years: 6, group: ['Backend'], comments: '' },
+  { id: 9, name: 'Python', rating: 90, years: 9, group: ['Backend'], comments: '' },
+  { id: 10, name: 'Test Automation', rating: 90, years: 7, group: ['Backend'], comments: '' },
+  { id: 11, name: 'Perl Backend Development & Scripting', rating: 90, years: 5, group: ['Backend'], comments: '' },
+  { id: 12, name: 'Database Administration', rating: 90, years: 5, group: ['Backend'], comments: '' },
+  { id: 13, name: 'AI & ML Integrations', rating: 85, years: 3, group: ['Backend'], comments: '' },
+  { id: 14, name: 'Linux Server Administration', rating: 75, years: 6, group: ['Backend'], comments: '' },
+  { id: 15, name: 'Shell Scripting', rating: 80, years: 4, group: ['Backend'], comments: '' },
+  { id: 16, name: 'Docker', rating: 50, years: 4, group: ['Backend'], comments: '' },
+  { id: 17, name: 'Kubernetes', rating: 50, years: 2, group: ['Backend'], comments: '' },
 ];
+
+// export interface EducationMetric {
+//   extracurriculars?: string;
+//   alternative?: boolean;
+//   institution: string;
+//   specialty?: string;
+//   year_i?: number;
+//   year_f?: number;
+//   degree: string;
+//   years: string;
+//   field: string;
+// }
+
+export const EducationMetrics: EducationMetric[] = [
+  {
+    years: '2010 - 2014',
+    field: 'Kinesiology',
+    degree: "Bachelor's of Science",
+    institution: 'University of Calgary',
+    specialty: 'Biomechanics',
+    year_i: 2010,
+    year_f: 2014,
+  },
+  {
+    years: '2014 - 2017',
+    field: 'Computer Science',
+    degree: "Bachelor's of Science",
+    institution: 'University of Calgary',
+    specialty: 'Software Engineering',
+    year_i: 2014,
+    year_f: 2017,
+  }
+];
+
 export const HOME: SiteContent = {
   id: 'home',
   page: 'Home',
@@ -100,3 +166,6 @@ export const CONTACT_ME: SiteContent = {
     content: "Senior Software Engineer | Canada"
   }
 };
+
+export const SeedBlogPosts: BlogPost[] = [
+];

@@ -1,52 +1,33 @@
-import { Component, signal, ViewChild } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MyOwnMaterialModule } from './core/material';
-import { routerSlideAnimation } from './core/ui/animations';
 import { SpinnerComponent } from './support/spinner/spinner.component';
 import { LayoutComponent } from './layout/layout.component';
+import { LoadingService } from './core/services/loading.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'mll-root',
   standalone: true,
-  imports: [CommonModule, MyOwnMaterialModule, LayoutComponent, SpinnerComponent, RouterOutlet],
+  imports: [CommonModule, MyOwnMaterialModule, LayoutComponent, SpinnerComponent, HttpClientModule, MatProgressBarModule],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    LoadingService,
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss', '../styles.scss'],
-  animations: [routerSlideAnimation],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent {
-  directionInverse: string = '-100%'; // Backward by default
-  direction: string = '100%'; // Forward by default
   title = 'wip';
-  isLoading = false;
-
-  constructor(
-    private router: Router
-  ) {
-    // Handle navigation events
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationStart) {
-        this.isLoading = true; // Show spinner on navigation start
-      } else if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError) {
-        this.isLoading = false; // Hide spinner on navigation end
-      }
-    });
-  }
 
   sidebarVisible = signal(false);
 
   onExplore(): void {
     this.sidebarVisible.set(true);
-  }
-
-  prepareRoute(outlet: RouterOutlet): any {
-    // Return the animation trigger with custom params
-    return {
-      value: outlet?.activatedRouteData?.['animation'] || null,
-      params: {
-        direction: this.direction,
-        directionInverse: this.directionInverse,
-      },
-    };
   }
 }

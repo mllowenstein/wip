@@ -1,0 +1,30 @@
+.blog-container {
+  padding: 20px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.blog-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blog-post {
+  padding: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.new-post-btn {
+  margin-bottom: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  margin-left: 5px;
+}

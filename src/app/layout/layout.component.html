@@ -1,5 +1,9 @@
 <mll-navbar #nav class="app-nav"></mll-navbar>
-<main class="main-content">
-  <mll-portfolio #portfolio></mll-portfolio>
-</main>
+<span *ngIf="loading$ | async">
+  <mll-spinner class="init-loader"></mll-spinner>
+  <mat-progress-bar mode="indeterminate" *ngIf="loading$ | async"></mat-progress-bar>
+</span>
+<div [@routerSlideAnimation]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>
 <mll-footer class="app-footer"></mll-footer>

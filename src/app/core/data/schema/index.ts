@@ -66,9 +66,35 @@ export interface EducationMetric {
   extracurriculars?: string;
   alternative?: boolean;
   institution: string;
+  specialty?: string;
   year_i?: number;
   year_f?: number;
   degree: string;
   years: string;
   field: string;
+}
+
+export interface TimelineEvent {
+  id: number;
+  name: string;
+  date: string;
+  description: string;
+}
+
+export interface ContactSubmission {
+  idkey?: string;
+  email?: string;
+  message: string;
+  lastName: string;
+  firstName: string;
+}
+
+export interface BlogPost {
+  id: string;
+  date: Date;
+  slug: string;
+  title: string;
+  content: string;
+  excerpt?: string;
+  subtitle?: string;
 }

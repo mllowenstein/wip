@@ -34,7 +34,7 @@ export interface IRow {
   standalone: true,
   templateUrl: './grid.component.html',
   styleUrl: './grid.component.scss',
-  imports: [CommonModule, MyOwnMaterialModule, AgGridModule, MatAutocompleteModule, MatBadgeModule, MatButtonModule, MatExpansionModule, MatProgressBarModule, MatSelectModule],
+  imports: [CommonModule, MyOwnMaterialModule, AgGridAngular, AgGridModule, MatAutocompleteModule, MatBadgeModule, MatButtonModule, MatExpansionModule, MatProgressBarModule, MatSelectModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class GridComponent implements OnInit {
@@ -118,6 +118,5 @@ export class GridComponent implements OnInit {
   onGridReady(params: any): void {
     console.log(params);
     params.api.sizeColumnsToFit();
-    params.api.sizeColumnsToA
   }
 }

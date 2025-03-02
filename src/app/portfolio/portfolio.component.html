@@ -1,5 +1,14 @@
-<div class="sections-container">
-  <mll-business-card (explore)="onExplore()"></mll-business-card>
-  <mll-sidebar #sidebar [visible]="sidebarVisible()"></mll-sidebar>
-  <mll-sections #sections></mll-sections>
-</div>
+<mat-sidenav-container class="sections-container">
+  <!-- Sidebar Navigation -->
+  <mat-sidenav #sidenav mode="side" class="sections-nav" [opened]="sidebarVisible()">
+    <mll-sidebar #sidebar [visible]="sidebarVisible()" (focusing)="onChangeFocus($event)"></mll-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content class="sections-content">
+    <!-- Toggle Button -->
+    <button mat-icon-button class="toggle-btn" (click)="toggleSidebar()">
+      <mat-icon>{{ sidebarVisible() ? 'close' : 'menu' }}</mat-icon>
+    </button>
+    <mll-business-card *ngIf="!sidebarVisible()" (explore)="onExplore()"></mll-business-card>
+    <mll-sections #sections *ngIf="sidebarVisible()" [activated]="focusing()"></mll-sections>
+  </mat-sidenav-content>
+</mat-sidenav-container>

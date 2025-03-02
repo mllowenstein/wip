@@ -4,7 +4,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 
 html,
 body {
@@ -106,7 +105,7 @@ body {
 
 .page-container {
   padding: 20px !important;
-  font-family: Montserrat;
+  font-family: 'Montserrat' !important;
 }
 
 main {
@@ -126,105 +125,103 @@ main {
   --text-color: #f8f9fa;
 }
 /* Reset basic styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
 
 /* Apply a consistent full-page background */
-body {
-  background: #f4f5f7;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+// body {
+//   background: #f4f5f7;
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+// }
 
 /* Business Card Styling */
-.card {
-  width: 400px;
-  /* Set a proper width */
-  max-width: 90%;
-  /* Ensure responsiveness */
-  text-align: center;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.8s ease-in-out;
-}
+// .card {
+//   width: 400px;
+//   /* Set a proper width */
+//   max-width: 90%;
+//   /* Ensure responsiveness */
+//   text-align: center;
+//   padding: 20px;
+//   background: white;
+//   border-radius: 10px;
+//   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+//   transition: all 0.8s ease-in-out;
+// }
 
 /* Profile Image */
-.card img {
-  width: 100px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
+// .card img {
+//   width: 100px;
+//   border-radius: 50%;
+//   margin-bottom: 10px;
+// }
 
 /* Button Styling */
-.card button {
-  width: 80%;
-  padding: 10px;
-  border: none;
-  background: #183b63;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
-  transition: background 0.3s ease;
-}
+// .card button {
+//   width: 80%;
+//   padding: 10px;
+//   border: none;
+//   background: #183b63;
+//   color: white;
+//   font-size: 16px;
+//   cursor: pointer;
+//   border-radius: 5px;
+//   margin-top: 10px;
+//   transition: background 0.3s ease;
+// }
 
-.card button:hover {
-  background: #285e8e;
-}
+// .card button:hover {
+//   background: #285e8e;
+// }
 
 /* Sidebar Fix */
-.sidebar {
-  width: 220px;
-  background: #183b63;
-  color: white;
-  height: 100vh;
-  position: fixed;
-  left: -220px;
-  /* Hide sidebar initially */
-  top: 0;
-  transition: left 0.5s ease;
-  padding: 20px;
-}
+// .sidebar {
+//   width: 220px;
+//   background: #183b63;
+//   color: white;
+//   height: 100vh;
+//   position: fixed;
+//   left: -220px;
+//   /* Hide sidebar initially */
+//   top: 0;
+//   transition: left 0.5s ease;
+//   padding: 20px;
+// }
 
-.sidebar.visible {
-  left: 0;
-}
+// .sidebar.visible {
+//   left: 0;
+// }
 
 /* Make sure text inside sidebar is visible */
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
+// .sidebar ul {
+//   list-style: none;
+//   padding: 0;
+// }
 
-.sidebar ul li {
-  margin: 20px 0;
-}
+// .sidebar ul li {
+//   margin: 20px 0;
+// }
 
-.sidebar ul li a {
-  color: white;
-  text-decoration: none;
-}
+// .sidebar ul li a {
+//   color: white;
+//   text-decoration: none;
+// }
 
 /* Business Card Shrinking Animation */
-.card.shrink {
-  top: 10px;
-  left: calc(100% - 80px);
-  width: 80px;
-  height: 80px;
-  overflow: hidden;
-}
+// .card.shrink {
+//   top: 10px;
+//   left: calc(100% - 80px);
+//   width: 80px;
+//   height: 80px;
+//   overflow: hidden;
+// }
 
-.card.shrink:hover {
-  width: 400px;
-  height: auto;
-}
+// .card.shrink:hover {
+//   width: 400px;
+//   height: auto;
+// }
+
+// ::ng-deep .mat-dialog-container {
+//   animation: dialogCustomAnimation;
+// }

@@ -1,8 +1,8 @@
 <h1>Timeline</h1>
 <ul>
-  <li *ngFor="let event of events" [style.--accent-color]="event.accentColor">
-    <div class="date">{{ event.year }}</div>
-    <div class="title">{{ event.title }}</div>
+  <li *ngFor="let event of events">
+    <div class="date">{{ event.date }}</div>
+    <div class="title">{{ event.name }}</div>
     <div class="descr">{{ event.description }}</div>
   </li>
 </ul>

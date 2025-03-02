@@ -1,27 +1,6 @@
 /* app.component.scss */
-main {
-  position: relative;
-}
-
-/* app.component.css */
-mll-spinner {
-  position: fixed;
-  top: 0;
-  left: 0;
+.page-content {
+  font-family: Montserrat !important;
   height: 100vh;
   width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.8);
-  z-index: 1000;
-}
-
-:host {
-  display: block;
-  background: #f4f5f7;
-  height: 100vh;
-  width:100vw;
-  overflow: hidden;
-  font-family: 'Montserrat';
 }

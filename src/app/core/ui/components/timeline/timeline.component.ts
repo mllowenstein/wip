@@ -1,20 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-export interface TimelineEvent {
-  year: string;
-  title: string;
-  description: string;
-  accentColor: string;
-}
+import { MyOwnMaterialModule } from '../../../material'
+import { TimelineEvent } from '../../../data/schema';
 
 @Component({
   selector: 'mll-timeline',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MyOwnMaterialModule],
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss',
 })
 export class TimelineComponent {
   @Input() events: TimelineEvent[] = [];
+  @Output() eventHovered = new EventEmitter<number | null>();
+
+  onHover(eventId: number | null): void {
+    this.eventHovered.emit(eventId);
+  }
 }

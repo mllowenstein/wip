@@ -1,0 +1,7 @@
+<div *ngIf="article" class="article-container">
+  <button class="back-btn" (click)="goBack()">← Back</button>
+  <h1>{{ article.title }}</h1>
+  <h3>{{ article.subtitle }}</h3>
+  <p>{{ article.content }}</p>
+  <small>{{ article.date }}</small>
+</div>

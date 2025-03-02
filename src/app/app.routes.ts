@@ -1,12 +1,31 @@
 import { Routes } from '@angular/router';
-import { LandingGuard } from './support/landing/landing.guard';
+// import { LandingGuard } from './support/landing/landing.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full', data: { animation: '*' } },
+  { path: '', redirectTo: 'portfolio', pathMatch: 'full', data: { animation: '*' } },
   {
     path: 'portfolio',
-    canActivate: [LandingGuard],
-    data: { animation: 'PortfolioComponent' },
-    loadComponent: () => import('./portfolio/portfolio.component').then(comp => comp.PortfolioComponent)
+    data: { animation: 'Portfolio' },
+    loadComponent: () => import('./portfolio/portfolio.component').then(m => m.PortfolioComponent)
+  },
+  {
+    path: 'blog',
+    data: { animation: 'Blog' },
+    loadComponent: () => import('./blog/blog.component').then(m => m.BlogComponent)
+  },
+  {
+    path: 'blog/:slug',
+    data: { animation: 'Article' },
+    loadComponent: () => import('./blog/article/article.component').then(m => m.ArticleComponent)
+  },
+  {
+    path: 'contact',
+    data: { animation: 'Contact' },
+    loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent)
+  },
+  {
+    path: 'pocs',
+    data: { animation: 'PoCs' },
+    loadComponent: () => import('./pocs/pocs.component').then(m => m.PocsComponent)
   },
 ];

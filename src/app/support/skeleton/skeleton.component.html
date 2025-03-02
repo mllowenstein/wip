@@ -1,4 +1,4 @@
-<div class="skeleton" width="width" height="height" ></div>
+<!-- <div class="skeleton" width="width" height="height" ></div> -->
 
 <!-- <div *ngIf="!dataLoaded; else content">
   <app-skeleton height="30px"></app-skeleton>
@@ -8,3 +8,8 @@
 <ng-template #content>
   <p>{{ data }}</p>
 </ng-template> -->
+<div *ngIf="isLoading" class="skeleton-container">
+  <div *ngFor="let item of [].constructor(count)">
+    <div [ngClass]="type"></div>
+  </div>
+</div>

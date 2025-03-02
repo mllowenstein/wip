@@ -1,12 +1,20 @@
 <nav class="navbar">
-  <div class="logo"><i class="fas fa-eye"></i></div>
-  <ul class="left-menu">
-  <span class="home-nav"><a routerLink="/">Home</a></span>
-  </ul>
-  <ul class="right-menu">
-    <li class="section-nav"><a href="#experience">Work Experience</a></li>
-    <li class="section-nav"><a href="#skills">Skills</a></li>
-    <li class="section-nav"><a href="#interests">Interests</a></li>
-    <li class="section-nav"><a href="#contact">Contact</a></li>
-  </ul>
+  <div class="navbar-container">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/site/branding/cropped-favicon-512-32x32.png" alt="FricLowenstein & Co." />
+    </a>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <button class="navbar-toggle" (click)="toggleMenu()">☰</button>
+    <ul [class.active]="menuOpen" class="navbar-links">
+      <li *ngFor="let link of links" class="nav-item" (click)="activate(link.path)"
+        [ngClass]="{activelink: link.active}">
+        <a class="nav-link" routerLink="{{link.path}}">{{link.label}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar-action-items">
+    <a class="navbar-action" routerLink="pocs">Demos</a>
+  </div>
 </nav>
