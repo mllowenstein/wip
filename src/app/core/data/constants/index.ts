@@ -168,4 +168,68 @@ export const CONTACT_ME: SiteContent = {
 };
 
 export const SeedBlogPosts: BlogPost[] = [
+  {
+    "id": "1",
+    "title": "Building Scalable Web Apps with Node.js and Express",
+    "subtitle": "A guide to structuring your backend for scalability",
+    "slug": "scalable-nodejs-web-apps",
+    "date": new Date('2024-02-15T10:00:00Z'),
+    "content": "In this article, we explore how to structure a Node.js backend using Express to handle high-traffic loads efficiently. We cover best practices, middleware design, and database optimizations..."
+  },
+  {
+    "id": "2",
+    "title": "State Management in React: Redux vs Context API",
+    "subtitle": "Choosing the right state management solution",
+    "slug": "react-state-management-redux-context",
+    "date": new Date('2024-03-01T12:30:00Z'),
+    "content": "State management in React is crucial for performance and maintainability. In this post, we compare Redux and the Context API, discussing their advantages, disadvantages, and best use cases..."
+  },
+  {
+    "id": "3",
+    "title": "Getting Started with Angular and RxJS",
+    "subtitle": "Understanding reactive programming in Angular",
+    "slug": "angular-rxjs-introduction",
+    "date": new Date('2024-03-10T14:15:00'),
+    "content": "Angular’s power lies in its ability to handle complex asynchronous operations using RxJS. This tutorial introduces the core concepts of Observables, Subjects, and how to use them in Angular apps..."
+  },
+  {
+    "id": "4",
+    "title": "Vue.js 3: The Composition API Explained",
+    "subtitle": "A deep dive into Vue's new Composition API",
+    "slug": "vue3-composition-api",
+    "date": new Date('2024-03-20T08:45:00Z'),
+    "content": "Vue 3 introduces the Composition API as a more flexible way to structure components. We explore how to use it effectively and compare it with the Options API..."
+  },
+  {
+    "id": "5",
+    "title": "Authentication in Full-Stack Apps: JWT vs Session-Based",
+    "subtitle": "Secure user authentication strategies",
+    "slug": "fullstack-authentication-jwt-vs-session",
+    "date": new Date('2024-04-05T17:00:00Z'),
+    "content": "When building a full-stack app, choosing between JWT and session-based authentication can be tricky. This guide breaks down the pros and cons of each approach and helps you decide which suits your project..."
+  },
+  {
+    "id": "6",
+    "title": "Optimizing Performance in React and Vue Applications",
+    "subtitle": "Improve your web app’s speed and responsiveness",
+    "slug": "performance-optimization-react-vue",
+    "date": new Date('2024-04-15T09:30:00Z'),
+    "content": "In modern web development, performance is a key factor. We discuss optimization techniques such as lazy loading, memoization, and virtual DOM updates to keep your React and Vue apps running smoothly..."
+  },
+  {
+    "id": "7",
+    "title": "Microservices with Node.js and Docker",
+    "subtitle": "Breaking down monoliths with microservices",
+    "slug": "nodejs-microservices-docker",
+    "date": new Date('2024-04-22T13:45:00Z'),
+    "content": "Microservices architecture is increasingly popular for scalable applications. Learn how to design, deploy, and manage microservices using Node.js and Docker..."
+  },
+  {
+    "id": "8",
+    "title": "Testing Strategies for Full-Stack Applications",
+    "subtitle": "Unit, Integration, and End-to-End Testing",
+    "slug": "fullstack-testing-strategies",
+    "date": new Date('2024-05-05T16:20:00Z'),
+    "content": "Effective testing ensures a stable application. This post covers different testing strategies, tools, and frameworks for testing full-stack applications in JavaScript environments..."
+  }
 ];

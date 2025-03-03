@@ -1,7 +1,6 @@
-canvas {
-  width: 100vw;
-  height: 100vh;
-  display: block;
+.canvas-container {
+  display: inline-block;
+  border: 1 px solid #ccc;
 }
 
 .controls {

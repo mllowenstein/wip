@@ -2,13 +2,14 @@ export const env: any = {
   production: false,
   tag: 'local',
   firebase: {
-    apiKey: 'AIzaSyBO3usafUaemmViD7ayy6n3pg5AK86zq0s',
-    authDomain: 'wipp-73383.firebaseapp.com',
-    projectId: 'wipp-73383',
-    storageBucket: 'wipp-73383.firebasestorage.app',
-    messagingSenderId: '1092093745697',
-    appId: '1:1092093745697:web:90eef2b2d35ee70b41a160',
-    measurementId: 'G-EPB2VXNNJ8'
+    apiKey: "AIzaSyBO3usafUaemmViD7ayy6n3pg5AK86zq0s",
+    authDomain: "wipp-73383.firebaseapp.com",
+    databaseURL: "https://wipp-73383-default-rtdb.firebaseio.com",
+    projectId: "wipp-73383",
+    storageBucket: "wipp-73383.firebasestorage.app",
+    messagingSenderId: "1092093745697",
+    appId: "1:1092093745697:web:90eef2b2d35ee70b41a160",
+    measurementId: "G-EPB2VXNNJ8"
   },
   perigon: {
     apiKey: '41fe7898-8ec4-4480-9a62-c8347503c98a',

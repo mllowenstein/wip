@@ -10,7 +10,7 @@ import { ChartComponent } from './chart/chart.component';
 @Component({
   selector: 'mll-pocs',
   standalone: true,
-  imports: [CommonModule, MyOwnMaterialModule, MatTabsModule, CanvasComponent, GraphComponent, GridComponent, ChartComponent],
+  imports: [CommonModule, MyOwnMaterialModule, MatTabsModule, CanvasComponent, GraphComponent, GridComponent, ChartComponent], //
   templateUrl: './pocs.component.html',
   styleUrl: './pocs.component.scss'
 })
