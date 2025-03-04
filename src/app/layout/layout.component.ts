@@ -7,12 +7,12 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
 import { routerSlideAnimation } from '../core/ui/animations';
 import { Observable } from 'rxjs';
 import { LoadingService } from '../core/services/loading.service';
-import { StyledComponent } from '../support/wrappers/styled/styled.component';
+import { FeatureComponent } from '../support/feature/feature.component';
 
 @Component({
   selector: 'mll-layout',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MyOwnMaterialModule, NavbarComponent, StyledComponent, FooterComponent],
+  imports: [CommonModule, RouterOutlet, MyOwnMaterialModule, NavbarComponent, FeatureComponent, FooterComponent],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
