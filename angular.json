@@ -42,6 +42,10 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "react",
+              "react-dom"
+            ],
             "customWebpackConfig": {
               "path": "./webpack.config.js"
             },

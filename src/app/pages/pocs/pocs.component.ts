@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MyOwnMaterialModule } from '../core/material';
+import { MyOwnMaterialModule } from '../../core/material';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
 import { CanvasComponent } from './canvas/canvas.component';

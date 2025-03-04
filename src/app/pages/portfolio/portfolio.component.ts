@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyOwnMaterialModule } from '../core/material';
+import { MyOwnMaterialModule } from '../../core/material';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SectionsComponent } from './sections/sections.component';
 import { BusinessCardComponent } from './business-card/business-card.component';
-import { TOP_OF_ABOUT_ME } from '../core/data/constants';
-import { SectionNav } from '../core/data/schema';
+import { TOP_OF_ABOUT_ME } from '../../core/data/constants';
+import { SectionNav } from '../../core/data/schema';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({

@@ -1,4 +1,4 @@
-import { SiteContent, SectionNav, SkillMetric, TimelineEvent, EducationMetric, BlogPost } from "../schema";
+import { SiteContent, SectionNav, SkillMetric, TimelineEvent, EducationMetric, BlogPost, ProjectSummary } from "../schema";
 
 export const ABOUT_ME_NAVS: SectionNav[] = [
   {
@@ -232,4 +232,31 @@ export const SeedBlogPosts: BlogPost[] = [
     "date": new Date('2024-05-05T16:20:00Z'),
     "content": "Effective testing ensures a stable application. This post covers different testing strategies, tools, and frameworks for testing full-stack applications in JavaScript environments..."
   }
+];
+
+export const ProjectsList: ProjectSummary[] = [
+  {
+    id: 1,
+    dates: '2022 - 2023',
+    company: 'FullStack Labs',
+    title: 'ETL Data Synchronization Pipelines',
+    summary: 'Coming Soon...',
+    // logo: 'src/assets/icons/fsl.png',
+  },
+  {
+    id: 2,
+    dates: '2024 - 2025',
+    company: 'NCAL Engineering',
+    title: 'End-to-End Custom Software Development and Business Automation',
+    summary: 'Coming Soon...',
+    // logo: 'src/assets/icons/fsl.png',
+  },
+  {
+    id: 3,
+    dates: 'Fall 2024',
+    company: 'House Analytics',
+    title: 'Custom Algorithms with CQRS-Integrated Machine Learning',
+    summary: 'Coming Soon...',
+    // logo: 'src/assets/icons/fsl.png',
+  },
 ];

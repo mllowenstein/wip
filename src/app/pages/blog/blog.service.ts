@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { BlogPost } from '../core/data/schema';
-import { SeedBlogPosts } from '../core/data/constants';
-import { ApiService } from '../core/services/api.service';
+import { BlogPost } from '../../core/data/schema';
+import { SeedBlogPosts } from '../../core/data/constants';
+import { ApiService } from '../../core/services/api.service';
 import { Observable, of } from 'rxjs';
-import { env } from '../../env/env';
+import { env } from '../../../env/env';
 
 @Injectable({
   providedIn: 'root'

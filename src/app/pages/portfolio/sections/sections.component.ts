@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyOwnMaterialModule } from '../../core/material';
+import { MyOwnMaterialModule } from '../../../core/material';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
 import { EducationComponent } from './education/education.component';
 import { SkillsComponent } from './skills/skills.component';
-import { SafeHtmlUtil } from '../../core/utils/safe-html.util';
+import { SafeHtmlUtil } from '../../../core/utils/safe-html.util';
 
 @Component({
   selector: 'mll-sections',

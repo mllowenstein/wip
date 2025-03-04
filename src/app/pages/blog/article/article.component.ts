@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { MyOwnMaterialModule } from '../../core/material';
+import { MyOwnMaterialModule } from '../../../core/material';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from '../blog.service';
-import { BlogPost } from '../../core/data/schema';
+import { BlogPost } from '../../../core/data/schema';
 
 @Component({
   selector: 'mll-article',

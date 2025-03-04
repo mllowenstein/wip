@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyOwnMaterialModule } from '../../../core/material';
-import { GridComponent } from '../../../core/ui/components/grid/grid.component';
+import { MyOwnMaterialModule } from '../../../../core/material';
+import { GridComponent } from '../../../../core/ui/components/grid/grid.component';
 
 @Component({
   selector: 'mll-skills',

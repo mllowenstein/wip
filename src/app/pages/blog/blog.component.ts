@@ -1,14 +1,14 @@
 import { Component, OnInit, inject, signal, computed, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BlogPost } from '../core/data/schema';
+import { BlogPost } from '../../core/data/schema';
 import { BlogService } from './blog.service';
 import { catchError, Observable } from 'rxjs';
 import { FormsModule } from '@angular/forms';
-import { MyOwnMaterialModule } from '../core/material';
+import { MyOwnMaterialModule } from '../../core/material';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
-import { routerSlideAnimation } from '../core/ui/animations';
-import { LoadingService } from '../core/services/loading.service';
+import { routerSlideAnimation } from '../../core/ui/animations';
+import { LoadingService } from '../../core/services/loading.service';
 import { generateUUID } from 'three/src/math/MathUtils';
 
 @Component({

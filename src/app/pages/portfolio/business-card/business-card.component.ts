@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyOwnMaterialModule } from '../../core/material';
+import { MyOwnMaterialModule } from '../../../core/material';
 
 @Component({
   selector: 'mll-business-card',

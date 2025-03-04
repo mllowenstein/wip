@@ -1,8 +1,8 @@
 import { Component, Input , Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyOwnMaterialModule } from '../../core/material';
-import { ABOUT_ME_NAVS } from '../../core/data/constants';
-import { SectionNav } from '../../core/data/schema';
+import { MyOwnMaterialModule } from '../../../core/material';
+import { ABOUT_ME_NAVS } from '../../../core/data/constants';
+import { SectionNav } from '../../../core/data/schema';
 
 @Component({
   selector: 'mll-sidebar',

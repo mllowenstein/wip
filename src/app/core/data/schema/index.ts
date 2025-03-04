@@ -98,3 +98,12 @@ export interface BlogPost {
   excerpt?: string;
   subtitle?: string;
 }
+
+export interface ProjectSummary {
+  id: number;
+  title: string;
+  dates: string;
+  company: string;
+  summary: string;
+  logo?: string;
+}

@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, Input, inject, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { MyOwnMaterialModule } from '../../core/material';
+import { MyOwnMaterialModule } from '../../../core/material';
 import { CommonModule } from '@angular/common';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyOwnMaterialModule } from '../../../core/material';
-import { TableComponent } from '../../../core/ui/components/table/table.component';
+import { MyOwnMaterialModule } from '../../../../core/material';
+import { TableComponent } from '../../../../core/ui/components/table/table.component';
 
 @Component({
   selector: 'mll-work-experience',
