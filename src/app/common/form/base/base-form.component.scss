@@ -1,0 +1,59 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dff-text {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+}
+
+.dff-textarea {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+}
+
+.dff-select {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+
+}
+
+.dff-select-option {
+  width: 100%;
+  padding: 3px;
+  margin-top: 1px;
+
+}
+
+.dff-checkbox {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+
+}
+
+.dff-date {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+}
+
+.dff-file {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+}
+
+.dff-toggle-switch {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+}
+
+.dff-button {
+  float: right;
+}

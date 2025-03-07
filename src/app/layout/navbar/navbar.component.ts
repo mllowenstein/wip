@@ -56,5 +56,6 @@ export class NavbarComponent {
   launchPoCs(): void {
     console.log('coming soon...');
   }
+
 }
 

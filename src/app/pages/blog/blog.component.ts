@@ -9,12 +9,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { routerSlideAnimation } from '../../core/ui/animations';
 import { LoadingService } from '../../core/services/loading.service';
+import { LazyLoadDirective } from '../../core/ui/directives/lazy-load.directive';
 import { generateUUID } from 'three/src/math/MathUtils';
 
 @Component({
-  selector: 'mll-article',
+  selector: 'mll-blog',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule, MyOwnMaterialModule, MatDialogModule],
+  imports: [CommonModule, RouterModule, FormsModule, MyOwnMaterialModule, MatDialogModule, LazyLoadDirective],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss',
   animations: [routerSlideAnimation],
@@ -25,7 +26,7 @@ export class BlogComponent implements OnInit {
   blogposts = signal<(BlogPost | null)[]>([]);
   private router = inject(Router);
   article!: BlogPost | null;
-  errorMessage: string = '';
+  errorMessage = signal('');
   searchQuery = signal('');
   filteredPosts = computed(() => {
     this.blogposts().filter(post=>
@@ -45,8 +46,11 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     this.loadingService.show();
     this.blogger.getAllBlogPosts().subscribe({
-      next: (articles) => this.blogposts.set(articles),
-      error: (err) => this.errorMessage = `We ran into a problem trying to find our feed - ${err}`,
+      next: (articles) => {
+        console.log(articles);
+        this.blogposts.set(articles);
+      },
+      error: (err) => this.errorMessage.set(`We ran into a problem trying to find our feed - ${err}`),
       complete: () => {
         this.loadingService.hide();
         console.log('Enjoy reading the article!');
@@ -55,7 +59,8 @@ export class BlogComponent implements OnInit {
   }
 
   viewPost(slug: string): void {
-    this.router.navigate(['/blog', slug]);
+    console.log(slug);
+    this.router.navigateByUrl(`/blog/${slug}`);
   }
 
   createNewPost(): void {
@@ -68,6 +73,16 @@ export class BlogComponent implements OnInit {
       date: new Date(new Date().toISOString().split('T')[0]),
     };
     this.blogposts.update((posts: any) => [newPost, ...posts]);
+  }
+
+  editPost(id: string, event: any) {
+    event.stopPropogation();
+    console.log('Coming Soon: Edit Blog Post...');
+  }
+
+  deletePost(id: string, event: any) {
+    event.stopPropogation();
+    console.log('Coming Soon: Delete Blog Post...');
   }
 
   onScroll(event: any) {

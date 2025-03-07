@@ -1,27 +1,29 @@
+<!-- Stylistic Feature -->
 <div class="min-h-screen bg-gray-900 text-white p-8 font-sans">
-      <!-- Hero Section -->
-      <section class="text-center py-16">
-        <h1 @fadeIn class="text-5xl font-bold">
-          Hi, I'm <span class="text-blue-400">Michael Lowenstein</span>
-        <p @fadeIn class="text-lg mt-4 text-gray-400" style="animation-delay: 500ms">
-          Senior Software Engineer • Fullstack • Backend • Frontend • DBA
-        </p>
-      <section class="py-16">
-        <h2 class="text-3xl font-semibold text-center mb-8">My Work</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div 
-          *ngFor="let project of projects" 
-            class="relative overflow-hidden rounded-xl shadow-lg"
-            (mouseenter)="hovered = project.id" (mouseleave)="hovered = null">
-          </div>
-        </div>
-      </section>
-      <!-- Skills Section -->
-      <section class="py-16">
-        <h2 class="text-3xl font-semibold text-center mb-8">Skills</h2>
-        <div class="flex justify-center gap-6 flex-wrap"></div>
-      </section>
-      <!-- Download Section -->
-      <section class="text-center py-16">
-        <h2 class="text-3xl font-semibold mb-4">Before You GO!</h2>
-      </section>
+  <!-- Hero Section -->
+  <div class="text-center py-16" mllParallax>
+    <h1 @fadeIn class="text-5xl font-bold">
+      Hi, I'm <span class="text-blue-400">Michael Lowenstein</span>
+      <p @fadeIn class="text-lg mt-4 text-gray-400" style="animation-delay: 500ms">
+        Senior Software Engineer • Fullstack • Backend • Frontend • DBA
+      </p>
+    </h1>
+  </div>
+  <section class="py-16" mllParallax>
+    <h2 class="text-3xl font-semibold text-center mb-8">My Work</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div *ngFor="let project of projects" class="relative overflow-hidden rounded-xl shadow-lg"
+        (mouseenter)="hovered = project.id" (mouseleave)="hovered = null">
+      </div>
+    </div>
+  </section>
+  <!-- Skills Section -->
+  <section class="py-16" mllParallax>
+    <h2 class="text-3xl font-semibold text-center mb-8">Skills</h2>
+    <div class="flex justify-center gap-6 flex-wrap"></div>
+  </section>
+  <!-- Download Section -->
+  <section class="text-center py-16" mllParallax>
+    <h2 class="text-3xl font-semibold mb-4">Before You GO!</h2>
+  </section>
+</div>

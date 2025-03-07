@@ -2,6 +2,19 @@
 /* Bootstrap Styling (styles.css) */
 @import 'bootstrap/dist/css/bootstrap.min.css';
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+:root {
+  --primary-color: #003366;
+  --secondary-color: #0055a5;
+  --light-bg: #f9f9f9;
+  --dark-bg: #1e1e1e;
+  --text-color: #333;
+  --white: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 html,
 body {

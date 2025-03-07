@@ -5,13 +5,14 @@ import { ProjectsList, SkillsMetrics } from '../../core/data/constants';
 import { CommonModule } from '@angular/common';
 import { MyOwnMaterialModule } from '../../core/material';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ParallaxDirective } from '../../core/ui/directives/parallax.directive';
 
 @Component({
   selector: 'mll-feature',
   templateUrl: './feature.component.html',
   styleUrls: ['./feature.component.scss'],
   standalone: true,
-  imports: [CommonModule, MyOwnMaterialModule, MatDialogModule],
+  imports: [CommonModule, MyOwnMaterialModule, MatDialogModule, ParallaxDirective],
   animations: [
     trigger('fadeIn', [
       transition(':enter', [
@@ -22,6 +23,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     trigger('hoverScale', [
       transition(':enter, :hover', [
         animate('0.3s ease-in-out', style({ transform: 'scale(1.1)' }))
+      ])
+    ]),
+    trigger('scaleUp', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'scale(0.8)' }),
+        animate('0.5s ease-in-out', style({ opacity: 1, transform: 'scale(1)' }))
       ])
     ])
   ]

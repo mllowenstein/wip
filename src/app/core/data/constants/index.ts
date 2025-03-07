@@ -36,7 +36,7 @@ export const WORK_METRICS: TimelineEvent[] = [
     name: 'Software Developer & Data Analyst',
     date: '2016 - 2017',
     description: 'SIA Wealth Management - Assisted in the rebuild & design of the new membership portal and constructed a library of stock market data-visualization tools'
-  },{
+  }, {
     id: 2,
     name: 'Freelance Web Developer',
     date: '2017 - 2022',
@@ -46,7 +46,7 @@ export const WORK_METRICS: TimelineEvent[] = [
     name: 'Senior Software Engineer',
     date: '2022 - 2024',
     description: 'FullStack Labs - '
-  },{
+  }, {
     id: 4,
     name: 'Senior Software Engineer',
     date: '2024 - Present',
@@ -57,7 +57,7 @@ export const WORK_METRICS: TimelineEvent[] = [
     date: '2024 - Present',
     description: 'College House @ House Analytics - '
   },
-]
+];
 
 
 export const SkillsMetrics: SkillMetric[] = [

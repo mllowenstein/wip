@@ -5,6 +5,7 @@
 </span>
 <div [@routerSlideAnimation]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
-  <mll-feature #feature></mll-feature>
 </div>
+  <mll-feature #feature *ngIf="onHomePage"></mll-feature>
+  <!-- <mll-loader #loader *ngIf="onHomePage"></mll-loader> -->
 <mll-footer class="app-footer"></mll-footer>

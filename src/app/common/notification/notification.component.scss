@@ -1,0 +1,46 @@
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.notification {
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0.95;
+}
+
+.notification.success {
+  background: #4CAF50;
+}
+
+/* Green */
+.notification.error {
+  background: #F44336;
+}
+
+/* Red */
+.notification.warning {
+  background: #FF9800;
+}
+
+/* Orange */
+.notification.info {
+  background: #2196F3;
+}
+
+/* Blue */
+
+.notification:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}

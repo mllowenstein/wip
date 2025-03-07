@@ -8,7 +8,7 @@
     <button mat-icon-button class="toggle-btn" (click)="toggleSidebar()">
       <mat-icon>{{ sidebarVisible() ? 'close' : 'menu' }}</mat-icon>
     </button>
-    <mll-business-card *ngIf="!sidebarVisible()" (explore)="onExplore()"></mll-business-card>
+    <mll-business-card (explore)="onExplore()"></mll-business-card>
     <mll-sections #sections *ngIf="sidebarVisible()" [activated]="focusing()"></mll-sections>
   </mat-sidenav-content>
 </mat-sidenav-container>

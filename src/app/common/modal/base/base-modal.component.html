@@ -1,0 +1,7 @@
+<h2 mat-dialog-title>Dynamic Dialog</h2>
+<mat-dialog-content>
+  <ng-container *ngComponentOutlet="data.component"></ng-container>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="close()">Close</button>
+</mat-dialog-actions>

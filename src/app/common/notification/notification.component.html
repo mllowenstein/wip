@@ -1,0 +1,10 @@
+<div class="notification-container">
+  <div
+    *ngFor="let notification of notifications()"
+    (click)="dismiss(notification.id)"
+    [class]="notification.type"
+    class="notification"
+    @fadeInOut>
+    {{ notification.message }}
+  </div>
+</div>
