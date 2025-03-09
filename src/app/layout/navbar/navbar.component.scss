@@ -13,10 +13,16 @@
 }
 
 .navbar-container {
-  width: 75%;
+  width: 50%;
   height: 32px;
   display: flex;
   align-items: center;
+}
+
+.navbar-action-btn {
+  display: flex;
+  align-items: center;
+
 }
 
 .navbar-brand {
@@ -68,7 +74,7 @@
 }
 
 .navbar-action-items {
-  display: inline-block;
+  display: contents;
   text-align: right;
 }
 

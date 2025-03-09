@@ -10,7 +10,7 @@ import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { routes } from './app.routes';
 import { env } from '../env/env';
-import { blogFeature } from './pages/blog/store/blog.store';
+import { blogFeature } from './public/pages/blog/store/blog.store';
 
 export const appConfig: ApplicationConfig = {
   providers: [

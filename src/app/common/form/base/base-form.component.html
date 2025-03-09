@@ -1,4 +1,4 @@
-<form [formGroup]="form" (submit)="submit()">
+<form (submit)="submit()">
   <div *ngFor="let field of fields">
     <label>{{ field.label }}</label>
     <input

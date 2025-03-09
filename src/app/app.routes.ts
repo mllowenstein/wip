@@ -5,31 +5,36 @@ export const routes: Routes = [
   {
     path: 'portfolio',
     data: { animation: 'Portfolio' },
-    loadComponent: () => import('./pages/portfolio/portfolio.component').then(m => m.PortfolioComponent)
+    loadComponent: () => import('./public/pages/portfolio/portfolio.component').then(m => m.PortfolioComponent)
   },
   {
     path: 'blog',
     data: { animation: 'Blog' },
-    loadComponent: () => import('./pages/blog/blog.component').then(m => m.BlogComponent)
+    loadComponent: () => import('./public/pages/blog/blog.component').then(m => m.BlogComponent)
   },
   {
     path: 'blog/:slug',
     data: { animation: 'Article' },
-    loadComponent: () => import('./pages/blog/article/article.component').then(m => m.ArticleComponent)
+    loadComponent: () => import('./public/pages/blog/article/article.component').then(m => m.ArticleComponent)
   },
   {
     path: 'contact',
     data: { animation: 'Contact' },
-    loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent)
-  },
-  {
-    path: 'pocs',
-    data: { animation: 'PoCs' },
-    loadComponent: () => import('./pages/pocs/pocs.component').then(m => m.PocsComponent)
+    loadComponent: () => import('./public/pages/contact/contact.component').then(m => m.ContactComponent)
   },
   {
     path: '**',
     data: { animation: 'Error' },
-    loadComponent: () => import('./pages/error/error.component').then(m => m.ErrorComponent)
+    loadComponent: () => import('./public/pages/error/error.component').then(m => m.ErrorComponent)
+  },
+  {
+    path: 'auth',
+    data: { animation: 'Auth' },
+    loadComponent: () => import('./members/pages/auth/auth.component').then(m => m.AuthComponent)
+  },
+  {
+    path: 'pocs',
+    data: { animation: 'PoCs' },
+    loadComponent: () => import('./members/pages/pocs/pocs.component').then(m => m.PocsComponent)
   },
 ];

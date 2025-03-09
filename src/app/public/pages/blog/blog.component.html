@@ -1,0 +1,34 @@
+<div class="blog-container">
+  <header class="blog-banner">
+    <h2>Blog</h2>
+    <button class="btn primary-btn new-post-btn" (click)="createNewPost()">
+      <mat-icon class="btn-icon">plus</mat-icon> New Post
+    </button>
+  </header>
+
+  <!-- Search Bar -->
+  <input
+    class="search-bar"
+    [(ngModel)]="searchQuery"
+    placeholder="Search blog posts..."
+    />
+
+  <!-- Blog Post List -->
+  <div class="blog-feed" (scroll)="onScroll($event)">
+    <div
+      *ngFor="let post of blogposts()"
+      class="blog-card" mllLazyLoad
+      (click)="viewPost(post!.slug)">
+      <div class="post-content">
+        <h3>{{ post!.title }}</h3>
+        <h5>{{ post!.subtitle }}</h5>
+        <p>{{ post!.content | slice:0:100 }}...</p>
+        <small>{{ post!.date }}</small>
+      </div>
+      <span class="post-actions">
+        <button class="btn edit-btn" (click)="editPost(post.id, $event)">Edit</button>
+        <button class="btn delete-btn" (click)="deletePost(post.id, $event)">Delete</button>
+      </span>
+    </div>
+  </div>
+</div>

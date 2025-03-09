@@ -2,6 +2,7 @@
 <span *ngIf="loading$ | async">
   <mll-spinner class="init-loader"></mll-spinner>
   <mat-progress-bar mode="indeterminate" *ngIf="loading$ | async"></mat-progress-bar>
+  <mll-loader #loader></mll-loader>
 </span>
 <div [@routerSlideAnimation]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
