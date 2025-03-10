@@ -44,7 +44,7 @@
           "options": {
             "allowedCommonJsDependencies": [
               "react",
-              "react-dom",
+              "react-dom"
             ],
             "customWebpackConfig": {
               "path": "./webpack.config.js"
@@ -68,9 +68,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/react-dom/index.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -159,7 +157,8 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "webWorkerTsConfig": "tsconfig.worker.json"
           }
         }
       }

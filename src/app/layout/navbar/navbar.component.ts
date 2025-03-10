@@ -6,6 +6,7 @@ import { MyOwnMaterialModule } from '../../core/material';
 import { Notification } from '../../common/notification/notification.model';
 import { NotificationService } from '../../common/notification/notification.service';
 import { NotificationComponent } from '../../common/notification/notification.component';
+import { AuthService } from '../../core/services/auth.service';
 
 export interface NavRoute {
   active: boolean;
@@ -23,6 +24,7 @@ export interface NavRoute {
   providers: [NotificationService]
 })
 export class NavbarComponent {
+  private auth = inject(AuthService);
   testNotifications: Notification[] = [
     {
       id: Math.random() * 100000,

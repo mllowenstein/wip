@@ -2,11 +2,11 @@
 <span *ngIf="loading$ | async">
   <mll-spinner class="init-loader"></mll-spinner>
   <mat-progress-bar mode="indeterminate" *ngIf="loading$ | async"></mat-progress-bar>
-  <mll-loader #loader></mll-loader>
+  <mll-loader #loader class="i-am-the loader"></mll-loader>
 </span>
 <div [@routerSlideAnimation]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
 </div>
-  <mll-feature #feature *ngIf="onHomePage"></mll-feature>
-  <!-- <mll-loader #loader *ngIf="onHomePage"></mll-loader> -->
+<mll-feature #feature *ngIf="onHomePage"></mll-feature>
 <mll-footer class="app-footer"></mll-footer>
+

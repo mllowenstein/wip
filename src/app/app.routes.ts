@@ -28,9 +28,9 @@ export const routes: Routes = [
     loadComponent: () => import('./public/pages/error/error.component').then(m => m.ErrorComponent)
   },
   {
-    path: 'auth',
-    data: { animation: 'Auth' },
-    loadComponent: () => import('./members/pages/auth/auth.component').then(m => m.AuthComponent)
+    path: 'login',
+    data: { animation: 'Login' },
+    loadComponent: () => import('./members/pages/login/login.component').then(m => m.LoginComponent)
   },
   {
     path: 'pocs',

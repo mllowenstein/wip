@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { ModalService } from '../modal.service';
 import { CommonModule } from '@angular/common';
 import { MyOwnMaterialModule } from '../../../core/material';
