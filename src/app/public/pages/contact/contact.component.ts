@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MyOwnMaterialModule } from '../../../core/material';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../../core/services/api.service';
+// import { CalendarComponent } from '../../../common/calendar/calendar.component';
 
 @Component({
   selector: 'mll-contact',
   standalone: true,
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'], //, '../../styles.scss'],
-  imports: [CommonModule, MyOwnMaterialModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, MyOwnMaterialModule, FormsModule, ReactiveFormsModule], // CalendarModule
   providers: [ApiService]
 })
 export class ContactComponent {

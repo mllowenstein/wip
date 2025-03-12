@@ -10,9 +10,10 @@ import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { routes } from './app.routes';
 import { env } from '../env/env';
+import { BlogEffects } from './public/pages/blog/store/blog.effects';
 import { blogFeature } from './public/pages/blog/store/blog.store';
-import { loginFeature } from './members/pages/login/store/login.store';
-import { LoginEffects } from './members/pages/login/store/login.effects';
+import { loginFeature } from './auth/login/store/login.store';
+import { LoginEffects } from './auth/login/store/login.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -33,9 +34,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([])), // HTTP Interceptors
     provideAnimationsAsync(), // Required for animations
     MessageService, // PrimeNG Toast Notifications
-    // provideStore({ login: loginFeature.reducer }),
-    // provideEffects(LoginEffects),
-    // provideStore({ blog: blogFeature.reducer }),
-    // provideEffects(BlogEffects),
+    provideStore({ login: loginFeature.reducer, blog: blogFeature.reducer }),
+    provideEffects([LoginEffects, BlogEffects]),
   ]
 };

@@ -12,6 +12,8 @@ export const ADD_POST_VIEW: string = '[Blog] New Viewer';
 
 // login states
 export const LOGIN_REQUEST_OTP: string = '[Login] Request OTP';
+export const LOGIN_REQUEST_OTP_SUCCESS: string = '[Login] Request OTP Success';
+export const LOGIN_REQUEST_OTP_FAILURE: string = '[Login] Request OTP Failure';
 export const LOGIN_VERIFY_OTP: string = '[Login] Verify OTP';
 export const LOGIN_FAILURE: string = '[Login] Login Failure';
 export const LOGIN_SUCCESS: string = '[Login] Login Success';
@@ -28,6 +30,8 @@ export const MESSAGES: any = {
   },
   LoginStates: {
     RequestOTP: LOGIN_REQUEST_OTP,
+    RequestOTPSuccess: LOGIN_REQUEST_OTP_SUCCESS,
+    RequestOTPFailure: LOGIN_REQUEST_OTP_FAILURE,
     VerifyOTP: LOGIN_VERIFY_OTP,
     LoginFailure: LOGIN_FAILURE,
     LoginSuccess: LOGIN_SUCCESS,

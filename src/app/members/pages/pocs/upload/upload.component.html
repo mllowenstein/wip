@@ -1,0 +1,6 @@
+<input type="file" (change)="onFileSelected($event)" multiple>
+<div *ngFor="let file of files">
+  <p>{{ file.name }}</p>
+  <button (click)="analyzeFile(file)">Analyze</button>
+  <pre *ngIf="file.metadata">{{ file.metadata | json }}</pre>
+</div>

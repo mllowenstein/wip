@@ -94,8 +94,8 @@ export interface BlogPost {
   date: Date;
   slug: string;
   title: string;
+  views?: number;
   content: string;
-  excerpt?: string;
   subtitle?: string;
 }
 

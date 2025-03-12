@@ -6,11 +6,12 @@ import { CanvasComponent } from './canvas/canvas.component';
 import { GraphComponent } from './graph/graph.component';
 import { GridComponent } from './grid/grid.component';
 import { ChartComponent } from './chart/chart.component';
+import { UploadComponent } from './upload/upload.component'
 
 @Component({
   selector: 'mll-pocs',
   standalone: true,
-  imports: [CommonModule, MyOwnMaterialModule, MatTabsModule, CanvasComponent, GraphComponent, GridComponent, ChartComponent], //
+  imports: [CommonModule, MyOwnMaterialModule, MatTabsModule, UploadComponent, CanvasComponent, GraphComponent, GridComponent, ChartComponent], //
   templateUrl: './pocs.component.html',
   styleUrl: './pocs.component.scss'
 })

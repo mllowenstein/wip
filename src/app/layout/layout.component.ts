@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { LoadingService } from '../core/services/loading.service';
 import { FeatureComponent } from '../support/feature/feature.component';
 import { LoaderComponent } from '../support/loader/loader.component';
+import { PortfolioComponent } from "../public/pages/portfolio/portfolio.component";
 
 @Component({
   selector: 'mll-layout',

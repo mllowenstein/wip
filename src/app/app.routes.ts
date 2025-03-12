@@ -1,24 +1,31 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'portfolio', pathMatch: 'full', data: { animation: '*' } },
+  { path: '', redirectTo: 'login', pathMatch: 'full', data: { animation: '*' } },
+
   {
-    path: 'portfolio',
+    path: 'login',
+    data: { animation: 'Login' },
+    loadComponent: () => import('./auth/login/login.component').then(m => m.LoginComponent)
+  },
+  {
+    path: 'public/portfolio',
     data: { animation: 'Portfolio' },
     loadComponent: () => import('./public/pages/portfolio/portfolio.component').then(m => m.PortfolioComponent)
   },
   {
-    path: 'blog',
+    path: 'public/blog',
     data: { animation: 'Blog' },
     loadComponent: () => import('./public/pages/blog/blog.component').then(m => m.BlogComponent)
   },
   {
-    path: 'blog/:slug',
+    path: 'public/blog/:slug',
     data: { animation: 'Article' },
     loadComponent: () => import('./public/pages/blog/article/article.component').then(m => m.ArticleComponent)
   },
   {
-    path: 'contact',
+    path: 'public/contact',
     data: { animation: 'Contact' },
     loadComponent: () => import('./public/pages/contact/contact.component').then(m => m.ContactComponent)
   },
@@ -28,12 +35,13 @@ export const routes: Routes = [
     loadComponent: () => import('./public/pages/error/error.component').then(m => m.ErrorComponent)
   },
   {
-    path: 'login',
-    data: { animation: 'Login' },
-    loadComponent: () => import('./members/pages/login/login.component').then(m => m.LoginComponent)
+    path: 'members',
+    canActivate: [AuthGuard],
+    data: { animation: 'Members' },
+    loadComponent: () => import('./members/members.component').then(m => m.MembersComponent)
   },
   {
-    path: 'pocs',
+    path: 'members/pocs',
     data: { animation: 'PoCs' },
     loadComponent: () => import('./members/pages/pocs/pocs.component').then(m => m.PocsComponent)
   },

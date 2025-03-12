@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { routes } from '../../app.routes';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Route } from '@angular/router';
+import { RouterModule, Route, Router } from '@angular/router';
 import { MyOwnMaterialModule } from '../../core/material';
 import { Notification } from '../../common/notification/notification.model';
 import { NotificationService } from '../../common/notification/notification.service';
@@ -19,11 +19,12 @@ export interface NavRoute {
   selector: 'mll-navbar',
   standalone: true,
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'], //, '../../../'],
+  styleUrls: ['./navbar.component.scss'],
   imports: [CommonModule, RouterModule, MyOwnMaterialModule, NotificationComponent],
   providers: [NotificationService]
 })
 export class NavbarComponent {
+  private router = inject(Router);
   private auth = inject(AuthService);
   testNotifications: Notification[] = [
     {
@@ -51,9 +52,9 @@ export class NavbarComponent {
   links: NavRoute[] = [];
   menuOpen: boolean = false;
   navs: { path: string, display: string }[] = [
-    { path: 'portfolio', display: 'Portfolio' },
-    { path: 'blog', display: 'Blog' },
-    { path: 'contact', display: 'Contact Me' },
+    { path: 'public/portfolio', display: 'Portfolio' },
+    { path: 'public/blog', display: 'Blog' },
+    { path: 'public/contact', display: 'Contact Me' },
   ];
 
   ngOnInit(): void {
@@ -78,6 +79,10 @@ export class NavbarComponent {
     this.links.forEach(lk => {
       if (lk.path !== path) lk.active = false;
     });
+  }
+
+  userIsAuthenticated(): boolean {
+    return this.auth.isAuthenticated();
   }
 
   launchPoCs(): void {
