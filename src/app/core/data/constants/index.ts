@@ -1,4 +1,4 @@
-import { SiteContent, SectionNav, SkillMetric, TimelineEvent, EducationMetric, BlogPost, ProjectSummary } from "../schema";
+import { SiteContent, SectionNav, SkillMetric, TimelineEvent, EducationMetric, BlogPost, ProjectSummary, PageRoute, NavRoute } from "../schema";
 
 export const ABOUT_ME_NAVS: SectionNav[] = [
   {
@@ -79,18 +79,6 @@ export const SkillsMetrics: SkillMetric[] = [
   { id: 16, name: 'Docker', rating: 50, years: 4, group: ['Backend'], comments: '' },
   { id: 17, name: 'Kubernetes', rating: 50, years: 2, group: ['Backend'], comments: '' },
 ];
-
-// export interface EducationMetric {
-//   extracurriculars?: string;
-//   alternative?: boolean;
-//   institution: string;
-//   specialty?: string;
-//   year_i?: number;
-//   year_f?: number;
-//   degree: string;
-//   years: string;
-//   field: string;
-// }
 
 export const EducationMetrics: EducationMetric[] = [
   {
@@ -259,4 +247,41 @@ export const ProjectsList: ProjectSummary[] = [
     summary: 'Coming Soon...',
     // logo: 'src/assets/icons/fsl.png',
   },
+];
+export const PAGE_LINKS: PageRoute[] = [
+  {
+    label: 'Work Experience',
+    anchor: '#experience',
+    options: {
+      active: true,
+      order: 1,
+    }
+  },
+  {
+    label: 'Skills',
+    anchor: '#skills',
+    options: {
+      active: false,
+      order: 2,
+    }
+  },
+  {
+    label: 'Education',
+    anchor: '#education',
+    options: {
+      active: false,
+      order: 3,
+    }
+  },
+  {
+    label: 'Projects',
+    anchor: '#projects',
+    options: {
+      active: false,
+      order: 4,
+    }
+  }
+];
+
+export const NAV_LINKS: NavRoute[] = [
 ];

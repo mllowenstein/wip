@@ -1,5 +1,13 @@
 // centralized state store message archive
 
+// login states
+export const LOGIN_REQUEST_OTP: string = '[Login] Request OTP';
+export const LOGIN_REQUEST_OTP_SUCCESS: string = '[Login] Request OTP Success';
+export const LOGIN_REQUEST_OTP_FAILURE: string = '[Login] Request OTP Failure';
+export const LOGIN_VERIFY_OTP: string = '[Login] Verify OTP';
+export const LOGIN_FAILURE: string = '[Login] Login Failure';
+export const LOGIN_SUCCESS: string = '[Login] Login Success';
+
 // blog states
 export const LOAD_BLOG_POSTS: string = '[Blog] Load Posts';
 export const LOAD_BLOG_POSTS_SUCCESS: string = '[Blog] Load Posts: Successful';
@@ -9,14 +17,6 @@ export const ADD_BLOG_POST: string = '[Blog] Add New Post';
 export const UPDATE_BLOG_POST: string = '[Blog] Updated a Post';
 export const DELETE_BLOG_POST: string = '[Blog] Delete a Post';
 export const ADD_POST_VIEW: string = '[Blog] New Viewer';
-
-// login states
-export const LOGIN_REQUEST_OTP: string = '[Login] Request OTP';
-export const LOGIN_REQUEST_OTP_SUCCESS: string = '[Login] Request OTP Success';
-export const LOGIN_REQUEST_OTP_FAILURE: string = '[Login] Request OTP Failure';
-export const LOGIN_VERIFY_OTP: string = '[Login] Verify OTP';
-export const LOGIN_FAILURE: string = '[Login] Login Failure';
-export const LOGIN_SUCCESS: string = '[Login] Login Success';
 
 export const MESSAGES: any = {
   BlogStates: {

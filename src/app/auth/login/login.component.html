@@ -1,17 +1,1 @@
-<div class="login-container">
-  <form [formGroup]="loginForm">
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Email/Username</mat-label>
-      <input matInput formControlName="email" [disabled]="otpRequested()">
-    </mat-form-field>
-
-    <button
-      color="primary"
-      mat-raised-button
-      class="request-otp-btn"
-      [disabled]="!loginForm.valid || otpRequested()"
-      (click)="checkEmailForOTP(loginForm.value.email)">
-      {{ otpRequested() ? 'OTP Sent' : 'Request OTP' }}
-    </button>
-  </form>
-</div>
+<p>login works!</p>

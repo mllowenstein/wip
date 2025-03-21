@@ -1,9 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "cli": {
-    "packageManager": "npm"
-  },
   "newProjectRoot": "projects",
   "projects": {
     "wip": {
@@ -11,13 +8,15 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "skipTests": true
+          "skipTests": true,
+          "standalone": false
         },
         "@schematics/angular:class": {
           "skipTests": true
         },
         "@schematics/angular:directive": {
-          "skipTests": true
+          "skipTests": true,
+          "standalone": false
         },
         "@schematics/angular:guard": {
           "skipTests": true
@@ -26,7 +25,8 @@
           "skipTests": true
         },
         "@schematics/angular:pipe": {
-          "skipTests": true
+          "skipTests": true,
+          "standalone": false
         },
         "@schematics/angular:resolver": {
           "skipTests": true
@@ -40,37 +40,26 @@
       "prefix": "mll",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "allowedCommonJsDependencies": [
-              "react",
-              "react-dom"
-            ],
-            "customWebpackConfig": {
-              "path": "./webpack.config.js"
-            },
             "outputPath": "dist/wip",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/wasm"
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
             "styles": [
-              "node_modules/ag-grid-community/styles/ag-theme-material.min.css",
-              "node_modules/ag-grid-community/styles/ag-grid.min.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/apexcharts/dist/apexcharts.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -80,9 +69,7 @@
                   "with": "src/env/env.prod.ts"
                 }
               ],
-              "buildOptimizer": true,
               "optimization": true,
-              "vendorChunk": false,
               "extractLicenses": true,
               "sourceMap": {
                 "hidden": false,
@@ -99,17 +86,13 @@
                   "with": "src/env/env.dev.ts"
                 }
               ],
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
             },
             "local": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -118,7 +101,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "ssl": true,
             "sslKey": "cert/stage/staging.key",
@@ -138,10 +121,7 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "buildTarget": "wip:build"
-          }
+          "builder": "@angular-devkit/build-angular:extract-i18n"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -153,14 +133,15 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "webWorkerTsConfig": "tsconfig.worker.json"
+            "scripts": []
           }
         }
       }

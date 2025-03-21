@@ -1,4 +1,5 @@
 // reusable initerfaces & dataabase mapping
+import * as ENUMS from './enums';
 
 export interface SiteSection {
   contents?: { sections: SiteSection[] };
@@ -106,4 +107,30 @@ export interface ProjectSummary {
   company: string;
   summary: string;
   logo?: string;
+}
+
+export const Enums = ENUMS;
+
+export interface ChatMessage {
+  user: string;
+  message: string;
+  timestamp: number;
+}
+
+export interface EventData {
+  type: ENUMS.EventType;
+  payload?: any;
+}
+
+export interface PageRoute {
+  anchor: string;
+  label: string;
+  options?: any;
+}
+
+export interface NavRoute {
+  active: boolean;
+  path?: string,
+  label: string;
+  options?: any;
 }

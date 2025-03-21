@@ -1,8 +1,0 @@
-<div class="sidebar" [class.visible]="visible">
-  <ul>
-    <li><a routerLink="/">Home</a></li>
-    <span class="nav-option" *ngFor="let nav of navs">
-      <li><a (click)="activate(nav.value)">{{ nav.display }}</a></li>
-    </span>
-  </ul>
-</div>

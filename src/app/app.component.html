@@ -1,5 +1,8 @@
-<div class="page-content">
-  <mll-layout>
-    <router-outlet></router-outlet>
-  </mll-layout>
-</div>
+
+<app-spinner *ngIf="isLoading"></app-spinner>
+<main [@routeAnimations]="prepareRoute(outlet)" style="position: relative;">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>
+<footer class="footer-toolbar">
+  Copyright 2025 - Michael Lowenstein
+</footer>

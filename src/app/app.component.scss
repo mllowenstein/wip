@@ -1,7 +1,149 @@
-/* app.component.scss */
-.page-content {
-  font-family: Montserrat !important;
-  overflow: auto;
-  height: 100vh;
-  width: 100vw;
+.app-nav {
+  display: block;
+  height: 60px !important;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 60px;
+}
+
+.app-footer {
+  position: sticky;
+  bottom: 0;
+  height: 40px;
+}
+
+/* General Page Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  /* Modern typography */
+  background: linear-gradient(to bottom, #1e3c72, #2a5298);
+  /* Gradient Background */
+  color: #fff;
+  /* Light text */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+  background: rgba(0, 0, 0, 0.7);
+  /* Transparent Navbar */
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #ffcc00;
+  /* Golden accent */
+}
+
+/* Hero Section */
+.hero {
+  padding: 120px 20px 80px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero span {
+  color: #ffcc00;
+  /* Highlighted Text */
+}
+
+.hero p {
+  font-size: 22px;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(135deg, #ffcc00, #ff6600);
+  padding: 12px 24px;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff6600, #cc3300);
+  transform: scale(1.05);
+}
+
+/* SVG Loader Section */
+.svg-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin-top: 40px;
+}
+
+.svg-loader svg {
+  width: 80px;
+  height: 80px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.i-am-the-loader {
+  display: block;
+}
+
+.footer-toolbar {
+  text-align: center;
 }
