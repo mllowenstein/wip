@@ -9,4 +9,8 @@ import { fadeInOut } from '../../app.animations';
   animations: [fadeInOut],
 })
 export class LandingPageComponent {
+  cssCommentary = `
+    Master CSS animations from your very first set of @keyframes right
+    through to things no one else ever teaches you.
+  `;
 }

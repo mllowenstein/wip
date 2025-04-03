@@ -8,10 +8,13 @@ import { MyOwnMaterialModule } from '../core/material';
 import { ModalModule } from '../shared/modal/modal.module';
 import { FormModule } from '../shared/form/form.module';
 import { AuthRouting } from './auth.routing';
+import { AdminComponent } from './admin/admin.component';
+import { NavbarModule } from '../shared/navbar/navbar.module';
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +24,8 @@ import { AuthRouting } from './auth.routing';
     MyOwnMaterialModule,
     ModalModule,
     FormModule,
-    AuthRouting
+    AuthRouting,
+    NavbarModule
   ],
   providers: [AuthService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],

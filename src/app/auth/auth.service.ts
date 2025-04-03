@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { env } from '../../env/env';
 
 @Injectable({
@@ -9,6 +9,8 @@ import { env } from '../../env/env';
 export class AuthService {
   private authUrl: string = env.api.base;
   private authenticated = signal<boolean>(false);
+  private otpSubject = new BehaviorSubject<boolean>(false);
+  loggedIn$ = this.otpSubject.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +21,12 @@ export class AuthService {
   verifyOTP(username: string, otp: string): Observable<any> {
     return this.http.post(`${this.authUrl}/verify-otp`, { username, otp });
   }
+
+  // submitOtp(username: string, otp: string): Observable<boolean> {
+  //   return this.http.post(`${this.authUrl}/verify-otp`, { username, otp }).pipe(
+  //     tap((isValid: boolean) => this.otpSubject.next(isValid))
+  //   );
+  // }
 
   storeToken(token: string): void {
     localStorage.setItem('authtoken', token);

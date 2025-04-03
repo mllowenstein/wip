@@ -2,7 +2,7 @@
 <nav class="navbar">
   <div class="navbar-container">
     <a class="navbar-brand" href="#">
-      <img src="assetpath" alt="Headshot" />
+      <img src="../../../assets/docs/profile.jpg" alt="Headshot" />
     </a>
     <button class="navbar-toggle" (click)="toggleMenu()">☰</button>
     <ul [class.active]="menuOpen" class="navbar-links">
@@ -24,5 +24,8 @@
 </nav>
 <mll-notification></mll-notification>
 <ng-template #gotoLogin>
-  <a class="nav-link custom-btn btn-3" routerLink="/auth">Members Area</a>
+  <button class="nav-link custom-btn btn-12" (click)="navigate('login')">
+    <span>Login</span>
+    <span>Members Area</span>
+  </button>
 </ng-template>

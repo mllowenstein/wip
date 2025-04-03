@@ -68,3 +68,22 @@ export enum EventType {
   DATA_MODIFIED = 'datamodified',
   NEW_CHAT_MESSAGE = 'newchatmessage',
 }
+
+export enum StorageKeys {
+  Username = 'username',
+  Email = 'email',
+  Token = 'token',
+  TokenExpiry = 'expiresAt',
+  History = 'history',
+  IsMember = 'isMember',
+  Comments = 'comments',
+  WhoAmI = 'whoami',
+}
+
+export enum ContactType {
+  Home = 'Home',
+  Mobile = 'Mobile',
+  Email = 'Email',
+  LinkedIn = 'LinkedIn',
+  GitHub = 'GitHub',
+}

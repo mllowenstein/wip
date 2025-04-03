@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
   menuOpen: boolean = false;
   links: NavRoute[] = [];
   navs: { path: string, display: string }[] = [
+    { path: 'me', display: 'Who Am I?' },
     { path: 'portfolio', display: 'Portfolio' },
     { path: 'dashboard', display: 'Dashboards' },
     { path: 'contact', display: 'Contact Me' },

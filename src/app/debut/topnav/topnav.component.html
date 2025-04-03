@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <ul class="navbar-list">
+    <li class="navbar-item"*ngFor="let nav of sitenavs">
+      <button
+        class="navbar-link"
+        [class.active]="active === nav.value"
+        (click)="changeSection(nav.value)"
+        >
+        {{ nav.display | titlecase }}
+      </button>
+    </li>
+  </ul>
+</nav>

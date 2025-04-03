@@ -1,5 +1,6 @@
 // reusable initerfaces & dataabase mapping
 import * as ENUMS from './enums';
+import { ContactType } from './enums';
 
 export interface SiteSection {
   contents?: { sections: SiteSection[] };
@@ -133,4 +134,30 @@ export interface NavRoute {
   path?: string,
   label: string;
   options?: any;
+}
+
+export interface SiteModule {
+  name: string;
+  title: string;
+  summary: string;
+  subinfo: string;
+  icon?: string;
+  lastUpdated?: Date;
+  public: boolean;
+  contents: string[];
+  options?: object;
+}
+
+export interface ContactMethod {
+  type: ContactType;
+  label: string;
+  at: string;
+}
+
+export interface Engineer {
+  name: string;
+  title: string;
+  opentowork?: boolean;
+  opentofeedback?: boolean;
+  contacts: ContactMethod[];
 }

@@ -46,6 +46,11 @@ import { ErrorService } from './core/services/error.service';
 import { GlobalErrorHandler } from './core/handlers/global-error.handler';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { ErrorComponent } from './components/error/error.component';
+import { CardComponent } from './shared/card/card.component';
+import { NotificationModule } from './shared/notification/notification.module';
+import { ModalModule } from './shared/modal/modal.module';
+import { FormModule } from './shared/form/form.module';
+import { ComingSoonComponent } from './shared/coming-soon/coming-soon.component';
 
 const watchlist = env.crypto.watchlist;
 
@@ -65,6 +70,8 @@ const matchWatchlistToIcon = (
   declarations: [
     AppComponent,
     ErrorComponent,
+    CardComponent,
+    ComingSoonComponent,
   ],
   imports: [
     BrowserModule,
@@ -94,6 +101,9 @@ const matchWatchlistToIcon = (
       cryptoRvn,
     }),
     HttpClientModule,
+    NotificationModule,
+    ModalModule,
+    FormModule,
     NavbarModule,
     AppRouting,
   ],

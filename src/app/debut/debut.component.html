@@ -1,0 +1,14 @@
+<main>
+  <mll-sidenav #sidenav></mll-sidenav>
+  <div class="debut-content">
+    <mll-topnav
+      #topnav
+      [active]="activeSection()"
+      (sectionChange)="setActiveSection($event)">
+    </mll-topnav>
+    <mll-about #about *ngIf="isActive('aboutme')"></mll-about>
+    <mll-experience #experience  *ngIf="isActive('experience')"></mll-experience>
+    <mll-education #education  *ngIf="isActive('education')"></mll-education>
+    <mll-skills #skills  *ngIf="isActive('skills')"></mll-skills>
+  </div>
+</main>

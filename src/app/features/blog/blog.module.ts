@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModalModule } from '../../shared/modal/modal.module';
 import { FormModule } from '../../shared/form/form.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BlogService } from './blog.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ModalModule,
     BlogRouting,
   ],
+  providers: [BlogService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class BlogModule { }

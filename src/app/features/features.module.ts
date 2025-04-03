@@ -10,10 +10,11 @@ import { AnalysisModule } from './analysis/analysis.module';
 import { MessagingModule } from './messaging/messaging.module';
 import { FormModule } from '../shared/form/form.module';
 import { FeaturesRouting } from './features.routing';
-
+import { FeaturesComponent } from './features.component';
 
 @NgModule({
   declarations: [
+    FeaturesComponent
   ],
   imports: [
     CommonModule,
@@ -29,6 +30,7 @@ import { FeaturesRouting } from './features.routing';
     ReactiveFormsModule,
     FeaturesRouting,
   ],
+  exports: [FeaturesComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class FeaturesModule { }

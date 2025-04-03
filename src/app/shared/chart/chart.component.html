@@ -1,0 +1,7 @@
+<ng-container [ngSwitch]="config.type">
+  <mll-bar-chart *ngSwitchCase="'bar'" [data]="config.data" [options]="config.options"></mll-bar-chart>
+  <mll-line-chart *ngSwitchCase="'bar'" [data]="config.data" [options]="config.options"></mll-line-chart>
+  <mll-combo-chart *ngSwitchCase="'bar'" [data]="config.data" [options]="config.options"></mll-combo-chart>
+  <mll-scatter-chart *ngSwitchCase="'bar'" [data]="config.data" [options]="config.options"></mll-scatter-chart>
+  <div *ngSwitchDefault>Unsupported Chart Type...</div>
+</ng-container>

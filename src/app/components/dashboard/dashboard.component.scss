@@ -2,14 +2,6 @@
   font-family: 'Montserrat';
 }
 
-:host {
-  display: block;
-  background-color: #1a202c;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  padding: 0 2rem 2rem 2rem;
-}
-
 h1,
 h2 {
   text-align: center;
@@ -22,4 +14,11 @@ h2 {
   display: flex;
   height: 90vh;
   width: 100%;
+}
+:host {
+  display: block;
+  // background-color: #1a202c;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 2rem 2rem 2rem;
 }

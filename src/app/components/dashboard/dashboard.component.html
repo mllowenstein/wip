@@ -5,5 +5,26 @@
   </mll-navbar>
 </header>
 <div class="sections-container">
-
+  <h3 class="section-banner">{{module!.title}}</h3>
+  <div class="section-subtitle">
+    <summary class="section-summary">
+      {{module!.summary}}
+      <details class="section-details">
+        {{module!.subinfo}}
+      </details>
+    </summary>
+  </div>
+  <div cdkDropList (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let chart of chartConfigs(); let i = index" cdkDrag>
+      <app-chart [type]="chart.type" [title]="chart.title" [data]="dataset()"></app-chart>
+    </div>
+  </div>
 </div>
+
+<mll-sidebar></mll-sidebar>
+<section id="content">
+  <mll-toolbar></mll-toolbar>
+  <main>
+    <mll-featured></mll-featured>
+  </main>
+</section>

@@ -1,17 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
-/* Bootstrap Styling (styles.css) */
+
+/* ✅ Bootstrap CSS (leave as-is since it's a plain CSS file) */
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* ✅ Google Fonts (also CSS — leave as-is) */
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
-:root {
-  --primary-color: #003366;
-  --secondary-color: #0055a5;
-  --light-bg: #f9f9f9;
-  --dark-bg: #1e1e1e;
-  --text-color: #333;
-  --white: #fff;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
+/* ✅ SCSS File — REPLACE with `@use` */
 
 html {
   scroll-behavior: smooth;
@@ -126,9 +120,14 @@ main {
 }
 
 :root {
-  --primary-color: #007bff;
+  --primary-color: #003366;
+  --secondary-color: #0055a5;
   --background-color: #ffffff;
+  --light-bg: #f9f9f9;
+  --dark-bg: #1e1e1e;
   --text-color: #333;
+  --white: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme='dark'] {
@@ -931,7 +930,6 @@ main {
   top: 2px;
 }
 
-
 /* 14 */
 .btn-14 {
   background: rgb(255, 151, 0);
@@ -1048,3 +1046,7 @@ main {
   margin-right: -30px;
   margin-left: -30px;
 }
+
+/**
+ * Cards UI
+ */

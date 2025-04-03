@@ -8,9 +8,13 @@ import { NavbarModule } from "../../shared/navbar/navbar.module";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard.component';
+import { ChartModule } from '../../shared/chart/chart.module';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { FeaturedComponent } from './featured/featured.component';
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, SidebarComponent, ToolbarComponent, FeaturedComponent],
   imports: [
     CommonModule,
     ModalModule,
@@ -21,6 +25,7 @@ import { DashboardComponent } from './dashboard.component';
     NotificationModule,
     DashboardRouting,
     NavbarModule,
+    ChartModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })

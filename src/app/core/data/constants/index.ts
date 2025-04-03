@@ -1,4 +1,60 @@
-import { SiteContent, SectionNav, SkillMetric, TimelineEvent, EducationMetric, BlogPost, ProjectSummary, PageRoute, NavRoute } from "../schema";
+import { ChartConfig } from "../../../shared/chart/chart.model";
+import { Engineer, SiteContent, SiteModule, SectionNav, SkillMetric, TimelineEvent, EducationMetric, BlogPost, ProjectSummary, PageRoute, NavRoute } from "../schema";
+import { ContactType } from "../schema/enums";
+
+export const WhoAmI: Engineer = {
+  name: 'Michael Lowenstein',
+  title: 'Senior Software Engineer',
+  opentofeedback: true,
+  opentowork: true,
+  contacts: [
+    {
+      label: 'Email',
+      type: ContactType.Email,
+      at: 'michael@lowenstein.ca',
+    },
+    {
+      label: 'Mobile',
+      type: ContactType.Mobile,
+      at: '+1(403)667-0161',
+    },
+    {
+      label: 'GitHub',
+      type: ContactType.GitHub,
+      at: 'github.com/mllowenstein',
+    },
+    {
+      label: 'LinkedIn',
+      type: ContactType.LinkedIn,
+      at: 'linkedin.com/in/mlo2gs',
+    },
+  ]
+};
+
+export const PortfolioSlugs: string[] = [
+  'aboutme',
+  'workexperience',
+  'education',
+  'skills',
+];
+
+export const PortfolioNavs: SectionNav[] = [
+  {
+    display: 'Work Experience',
+    value: 'experience',
+    order: 1,
+  },
+  {
+    display: 'Education',
+    value: 'education',
+    order: 2,
+  },
+  {
+    display: 'Skills & Interests',
+    value: 'skillsandinterests',
+    order: 3,
+  },
+];
 
 export const ABOUT_ME_NAVS: SectionNav[] = [
   {
@@ -284,4 +340,73 @@ export const PAGE_LINKS: PageRoute[] = [
 ];
 
 export const NAV_LINKS: NavRoute[] = [
+];
+
+export const LineChartConfig: ChartConfig = {
+  type: 'line',
+  data: [],
+  options: { title: { text: 'Line View' } }
+};
+
+export const BarChartConfig: ChartConfig = {
+  type: 'bar',
+  data: [],
+  options: { title: { text: 'Bar Breakdown' } }
+};
+
+export const ComboChartConfig: ChartConfig = {
+  type: 'combo',
+  data: [],
+  options: { title: { text: 'Mixed Analytics' } }
+};
+
+export const ScatterChartConfig: ChartConfig = {
+  type: 'scatter',
+  data: [],
+  options: { title: { text: 'Time-Series Analytics' } }
+};
+
+export const SITEMODULES: SiteModule[] = [
+  {
+    name: 'portfolio',
+    title: 'My Professional Bio',
+    summary: `
+      Take a look around, create an account or don't - if you can't
+      stay long, check out the Contact page, shoot me an email and
+      grab a copy of my resume'.
+    `,
+    subinfo: `
+      You're visit to my site and any feedback you may have is greatly appreciated.
+    `,
+    contents: [],
+    public: true,
+  },
+  {
+    name: 'dashboard',
+    title: 'Realtime Dashboards',
+    summary: `
+      Some of this data is real, and some is auto-generated and/or mocked data -
+      check the dashbopards, then look around the site, and see what changes.
+    `,
+    subinfo: `
+      No information about users is collected or stored across sessions,
+      unless a user account has been created in the Members' Section.
+    `,
+    contents: [],
+    public: true,
+  },
+  {
+    name: 'contact',
+    title: 'Contact Me',
+    summary: `
+      Some of this data is real, and some is auto-generated and/or mocked data -
+      check the dashbopards, then look around the site, and see what changes.
+    `,
+    subinfo: `
+      No information about users is collected or stored across sessions,
+      unless a user account has been created in the Members' Section.
+    `,
+    contents: [],
+    public: true,
+  },
 ];

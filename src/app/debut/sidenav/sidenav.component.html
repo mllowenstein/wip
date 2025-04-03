@@ -1,0 +1,21 @@
+<aside class="sidebar" [class.active]="showContacts">
+  <div class="sidebar-info">
+    <figure class="avatar-box">
+      <img alt="Headshot" src="../../../assets/docs" />
+    </figure>X
+
+    <div class="info-content">
+      <h1 class="name">{{ me.name }}</h1>
+      <p class="title">{{ me.title }}</p>
+    </div>
+
+    <button class="info-more-btn" (click)="toggleContacts()">
+      <span>Show Contacts</span>
+      <mat-icon>chevron_down</mat-icon>
+    </button>
+  </div>
+
+  <div class="sidebar-info-more">
+    <!-- TODO -->
+  </div>
+</aside>

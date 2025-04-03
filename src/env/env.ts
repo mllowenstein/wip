@@ -2,7 +2,7 @@ export const env: any = {
   production: false,
   tag: 'local',
   firebase: {
-    apiKey: "AIzaSyBO3usafUaemmViD7ayy6n3pg5AK86zq0s", // replace with your own config.
+    apiKey: "AIzaSyBO3usafUaemmViD7ayy6n3pg5AK86zq0s", // replace with your own config.title
     authDomain: "wipp-73383.firebaseapp.com",
     databaseURL: "https://wipdata.firebaseio.com",
     projectId: "wipp-73383",
