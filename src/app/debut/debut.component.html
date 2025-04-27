@@ -1,14 +1,15 @@
 <main>
   <mll-sidenav #sidenav></mll-sidenav>
-  <div class="debut-content">
+  <div class="debut-content" [@staggeredFadeIn] *ngIf="landingInView">
     <mll-topnav
       #topnav
       [active]="activeSection()"
       (sectionChange)="setActiveSection($event)">
     </mll-topnav>
-    <mll-about #about *ngIf="isActive('aboutme')"></mll-about>
-    <mll-experience #experience  *ngIf="isActive('experience')"></mll-experience>
-    <mll-education #education  *ngIf="isActive('education')"></mll-education>
-    <mll-skills #skills  *ngIf="isActive('skills')"></mll-skills>
+    <!-- <mll-about #about *ngIf="isActive('aboutme')" class="animated-item"></mll-about> -->
+    <mll-about #about class="animated-item" mllInView (inView)="$event && landingInView"></mll-about>
+    <mll-experience #experience *ngIf="isActive('experience')" class="animated-item"></mll-experience>
+    <mll-education #education  *ngIf="isActive('education')" class="animated-item"></mll-education>
+    <mll-skills #skills *ngIf="isActive('skills')" class="animated-item"></mll-skills>
   </div>
 </main>

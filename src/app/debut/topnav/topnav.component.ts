@@ -13,21 +13,6 @@ export class TopnavComponent {
   @Input() active!: string;
   sitenavs: SectionNav[] = PortfolioNavs;
 
-
-
-// export interface SectionNav {
-//   display: string;
-//   value: string;
-//   order: number;
-// }
-
-// export interface Section {
-//   label: string;
-//   id: number;
-//   options: object;
-//   route?: string;
-// }
-
   changeSection(section: string): void {
     this.sectionChange.emit(section);
   }

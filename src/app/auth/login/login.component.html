@@ -19,7 +19,7 @@
 
   <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
 </div> -->
-
+<!--
 <div class="container">
   <div class="form-box login">
     <form action="#" *ngIf="!otpSent">
@@ -36,13 +36,6 @@
         <a href="#">Forgot Username/Email?</a>
       </div>
       <button type="submit" class="btn">Request OTP</button>
-      <!-- <p>or login with social platforms</p>
-      <div class="social-icons">
-        <a href="#"><i class='bx bxl-google'></i></a>
-        <a href="#"><i class='bx bxl-facebook'></i></a>
-        <a href="#"><i class='bx bxl-github'></i></a>
-        <a href="#"><i class='bx bxl-linkedin'></i></a>
-      </div> -->
     </form>
     <form action="#" *ngIf="otpSent">
       <h1>Login</h1>
@@ -58,13 +51,6 @@
         <a href="#">Request New OTP?</a>
       </div>
       <button type="submit" class="btn">Verify OTP</button>
-      <!-- <p>or login with social platforms</p>
-          <div class="social-icons">
-            <a href="#"><i class='bx bxl-google'></i></a>
-            <a href="#"><i class='bx bxl-facebook'></i></a>
-            <a href="#"><i class='bx bxl-github'></i></a>
-            <a href="#"><i class='bx bxl-linkedin'></i></a>
-          </div> -->
     </form>
   </div>
 
@@ -100,4 +86,34 @@
       <button class="btn login-btn">Login</button>
     </div>
   </div>
+</div> -->
+
+<div class="container">
+  <form (ngSubmit)="requestOtp()" *ngIf="!otpSent">
+    <input type="email" [(ngModel)]="username" name="username" required autofocus>
+    <button type="submit" [disabled]="loading">
+      <span *ngIf="!loading">Get OTP</span>
+      <span *ngIf="loading" class="spinner"></span>
+    </button>
+  </form>
+
+  <form (ngSubmit)="verifyOtp()" *ngIf="otpSent">
+    <!-- <input type="text" maxlength="6" [(ngModel)]="otp" name="otp" required autofocus> -->
+    <div class="otp-container">
+      <input class="otp-input" maxlength="1"
+        *ngFor="let digit of otpDigits; let i = index"
+        (input)="onInput($event, i)"
+        (keydown)="onKeyDown($event, i)" #otpInput>
+    </div>
+
+    <button type="submit" [disabled]="loading">
+      <span *ngIf="!loading">Verify</span>
+      <span *ngIf="loading" class="spinner"></span>
+    </button>
+    <div *ngIf="resendTimeout > 0">
+      Resend OTP in {{ resendTimeout }}s
+    </div>
+    <button *ngIf="resendTimeout <= 0" (click)="requestOtp()">Resend OTP</button>
+  </form>
+
 </div>

@@ -9,12 +9,11 @@ import { Engineer } from '../../core/data/schema';
   styleUrl: './sidenav.component.scss'
 })
 export class SidenavComponent {
+  profilePath = 'assets/profile.png';
   me: Engineer = WhoAmI;
   showContacts = false;
 
   toggleContacts(): void {
     this.showContacts = !this.showContacts;
   }
-
-
 }

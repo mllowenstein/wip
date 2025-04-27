@@ -14,7 +14,9 @@ import { ThemeService } from '../../core/services/theme.service';
 })
 export class LoginComponent {
   @ViewChild('nav') nav!: NavbarComponent;
+  resendTimeout = 60;
   errorMessage = '';
+  loading = false;
   otpSent = false;
   username = '';
   otp = '';
@@ -38,9 +40,12 @@ export class LoginComponent {
   }
 
   requestOtp(): void {
+    this.loading = true;
     this.auth.requestOTP(this.username).subscribe(
       () => {
         this.otpSent = true;
+        this.loading = false;
+        this.startResendTimer();
       },
       (error) => {
         this.errorMessage = error.error.message;
@@ -52,6 +57,33 @@ export class LoginComponent {
     this.auth.verifyOTP(this.username, this.otp).pipe(
       tap((token) => console.log(token)),
       map((token: any) => token ? localStorage.setItem(StorageKeys.Token, JSON.stringify(token)) : localStorage.removeItem(StorageKeys.Token))
-    );
+    ).toPromise().then((data) => {
+      console.log(data);
+      this.loading = false;
+      this.router.navigate(['/members']);
+    });
+  }
+
+  startResendTimer() {
+    const interval = setInterval(() => {
+      this.resendTimeout--;
+      if (this.resendTimeout <= 0) clearInterval(interval);
+    }, 1000);
+  }
+
+  otpDigits = ['', '', '', '', '', ''];
+
+  onInput(event: any, index: number) {
+    const input = event.target;
+    this.otpDigits[index] = input.value;
+    if (input.value && input.nextElementSibling) {
+      input.nextElementSibling.focus();
+    }
+  }
+
+  onKeyDown(event: KeyboardEvent, index: number) {
+    if (event.key === 'Backspace' && !this.otpDigits[index] && index > 0) {
+      (((event.target as HTMLInputElement).previousElementSibling) as HTMLInputElement).focus();
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { animation, style, group, query, trigger, animate, transition, animateChild, keyframes } from '@angular/animations';
+import { animation, style, group, query, trigger, animate, transition, animateChild, keyframes, stagger } from '@angular/animations';
 
 export const fadeInOut = trigger('fadeInOut', [
   transition(':enter', [style({ opacity: 0 }), animate('300ms ease-out', style({ opacity: 1 }))]),
@@ -246,3 +246,14 @@ export const routerSlideAnimation =
       },
     }),
   ]);
+
+export const staggeredFadeIn = trigger('staggeredFadeIn', [
+  transition(':enter', [
+    query('.animated-item', [
+      style({ opacity: 0, transform: 'translateY(20px)' }),
+      stagger(150, [
+        animate('600ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ])
+  ])
+]);

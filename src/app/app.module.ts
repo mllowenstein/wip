@@ -29,6 +29,7 @@ import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 import { env } from '../env/env';
 import { MyOwnMaterialModule } from './core/material';
+import { RecaptchaV3Module, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { ThemeService } from './core/services/theme.service';
@@ -75,6 +76,7 @@ const matchWatchlistToIcon = (
   ],
   imports: [
     BrowserModule,
+    RecaptchaV3Module,
     BrowserAnimationsModule,
     MyOwnMaterialModule,
     NgIconsModule.withIcons({

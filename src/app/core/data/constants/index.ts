@@ -33,7 +33,7 @@ export const WhoAmI: Engineer = {
 
 export const PortfolioSlugs: string[] = [
   'aboutme',
-  'workexperience',
+  'experience',
   'education',
   'skills',
 ];

@@ -58,7 +58,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/assets/css/monolith.css"
+              "src/assets/styles/monolith.css"
             ],
             "scripts": []
           },
