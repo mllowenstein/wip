@@ -1,4 +1,4 @@
-import { Component, Signal, signal, WritableSignal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { PortfolioSlugs } from '../core/data/constants';
 import { staggeredFadeIn } from '../app.animations';
 
@@ -12,7 +12,7 @@ import { staggeredFadeIn } from '../app.animations';
 export class DebutComponent {
   availableSlugs: string[] = PortfolioSlugs;
   activeSection = signal<string>('aboutme');
-  landingInView = false;
+  landingInView = signal<boolean>(false);
 
   setActiveSection(slug: string): void {
     if (this.availableSlugs.includes(slug))
@@ -21,5 +21,9 @@ export class DebutComponent {
 
   isActive(slug: string): boolean {
     return this.activeSection() === slug;
+  }
+
+  onInView(slug: string, inView: any): void {
+    if (inView) this.setActiveSection(slug);
   }
 }

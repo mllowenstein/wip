@@ -57,3 +57,21 @@ export class AppComponent {
 
 
 }
+
+// import { Component, ViewChild, ElementRef } from '@angular/core';
+// import { staggeredFadeIn } from './app.animations';
+
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html',
+//   styleUrls: ['./app.component.scss'],
+//   animations: [staggeredFadeIn],
+//   standalone: false,
+// })
+// export class AppComponent {
+//   @ViewChild('debutSection') debutSection!: ElementRef;
+
+//   scrollToDebut() {
+//     this.debutSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
+//   }
+// }

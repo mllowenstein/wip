@@ -2,7 +2,9 @@
   <mll-navbar #nav class="app-nav" (toggling)="onToggling($event)" (navigating)="onNavigating($event)">
   </mll-navbar>
 </header>
-<!-- <div class="login-container">
+
+<!--
+<div class="login-container">
   <h2>Login</h2>
 
   <div *ngIf="!otpSent">
@@ -18,8 +20,9 @@
   </div>
 
   <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
-</div> -->
-<!--
+</div>
+-->
+
 <div class="container">
   <div class="form-box login">
     <form action="#" *ngIf="!otpSent">
@@ -86,8 +89,9 @@
       <button class="btn login-btn">Login</button>
     </div>
   </div>
-</div> -->
+</div>
 
+<!--
 <div class="container">
   <form (ngSubmit)="requestOtp()" *ngIf="!otpSent">
     <input type="email" [(ngModel)]="username" name="username" required autofocus>
@@ -98,7 +102,8 @@
   </form>
 
   <form (ngSubmit)="verifyOtp()" *ngIf="otpSent">
-    <!-- <input type="text" maxlength="6" [(ngModel)]="otp" name="otp" required autofocus> -->
+
+    <input type="text" maxlength="6" [(ngModel)]="otp" name="otp" required autofocus>
     <div class="otp-container">
       <input class="otp-input" maxlength="1"
         *ngFor="let digit of otpDigits; let i = index"
@@ -117,3 +122,4 @@
   </form>
 
 </div>
+-->

@@ -3,8 +3,8 @@
     <li class="navbar-item"*ngFor="let nav of sitenavs">
       <button
         class="navbar-link"
-        [class.active]="active === nav.value"
         (click)="changeSection(nav.value)"
+        [class.active]="active === nav.value"
         >
         {{ nav.display }}
       </button>

@@ -6,10 +6,34 @@
       [active]="activeSection()"
       (sectionChange)="setActiveSection($event)">
     </mll-topnav>
-    <!-- <mll-about #about *ngIf="isActive('aboutme')" class="animated-item"></mll-about> -->
-    <mll-about #about class="animated-item" mllInView (inView)="$event && landingInView"></mll-about>
-    <mll-experience #experience *ngIf="isActive('experience')" class="animated-item"></mll-experience>
-    <mll-education #education  *ngIf="isActive('education')" class="animated-item"></mll-education>
-    <mll-skills #skills *ngIf="isActive('skills')" class="animated-item"></mll-skills>
+    <!-- <mll-about #about [class.active]="isActive('aboutme')" class="animated-item"></mll-about> -->
+    <mll-about
+      #about
+      class="animated-item"
+      (inView)="isActive('aboutme')"
+      (inView)="onInView('aboutme', $event)"
+      mllInView
+    ></mll-about>
+    <mll-experience
+      #experience
+      class="animated-item"
+      [class.active]="isActive('experience')"
+      (inView)="onInView('experience', $event)"
+      mllInView
+      ></mll-experience>
+    <mll-education
+      #education
+      class="animated-item"
+     [class.active]="isActive('education')"
+      (inView)="onInView('education', $event)"
+     mllInView
+    ></mll-education>
+    <mll-skills
+      #skills
+      class="animated-item"
+      [class.active]="isActive('skills')"
+      (inView)="onInView('skills', $event)"
+      mllInView
+    ></mll-skills>
   </div>
 </main>

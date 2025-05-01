@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -6,11 +6,10 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class StateService<T> {
-
   private state$!: BehaviorSubject<T>;
 
-  constructor(_initialState: T) {
-    this.state$ = new BehaviorSubject(_initialState);
+  constructor(private _initialState: T) {
+    this.state$ = new BehaviorSubject(this._initialState);
   }
 
   select<K>(selector: (state: T) => K): Observable<K> {
