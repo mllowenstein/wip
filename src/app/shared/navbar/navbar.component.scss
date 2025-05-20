@@ -47,16 +47,20 @@
 }
 
 .navbar-links {
-  display: flex;
+  display: inline-flex;
   list-style: none;
   z-index: 1000;
   background-color: #183b63 !important;
   margin: 0;
   padding: 0;
+  height: 56px;
+  font-size: small !important;
+  width: 75vw;
 }
 
 .navbar-links li {
-  margin: 0 16px;
+  margin: 12px;
+  font-size: small;
 }
 
 .navbar-links a {
