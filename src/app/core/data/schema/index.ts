@@ -161,3 +161,16 @@ export interface Engineer {
   opentofeedback?: boolean;
   contacts: ContactMethod[];
 }
+
+export interface Experience {
+  position: string;
+  company: string;
+  period: string;
+  highlights: string[];
+}
+
+export interface Education {
+  degree: string;
+  school: string;
+  year: string;
+}

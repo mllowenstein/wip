@@ -1,0 +1,228 @@
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f3f4f6, #e5e7eb);
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+
+    li a {
+      text-decoration: none;
+      color: #1f2937;
+      font-weight: 500;
+
+      &:hover {
+        color: #3b82f6;
+      }
+    }
+  }
+}
+
+.hero {
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+
+  .hero-content {
+    max-width: 700px;
+
+    h1 {
+      font-size: 2.5rem;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #4b5563;
+      margin-bottom: 2rem;
+    }
+
+    .cta {
+      padding: 0.75rem 1.5rem;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+
+      &:hover {
+        background-color: #2563eb;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; // You can add a hamburger menu here later
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+.navbar.shrunk {
+  padding: 0.5rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+
+/* src/app/portfolio-landing/portfolio-landing.component.scss */
+:host {
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h1 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #666;
+    margin: 0.5rem 0;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 1rem auto;
+  }
+
+  .contact {
+    margin: 1rem 0;
+
+    a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  }
+
+  .btn-resume {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+
+    &:hover {
+      background: #333;
+      color: #fff;
+    }
+  }
+}
+
+.experience {
+  margin-bottom: 2rem;
+
+  .experience-item {
+    margin-bottom: 1.5rem;
+
+    h4 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    time {
+      display: block;
+      font-size: 0.9rem;
+      color: #999;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+
+      li {
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+}
+
+.skills {
+  margin-bottom: 2rem;
+
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 0.25rem 0.75rem;
+      font-size: 0.9rem;
+
+      &:before {
+        content: '•';
+        margin-right: 0.25rem;
+        color: #666;
+      }
+    }
+  }
+}
+
+.education {
+  .education-item {
+    margin-bottom: 1rem;
+
+    h4 {
+      margin: 0;
+      font-size: 1.15rem;
+    }
+
+    p {
+      margin: 0.25rem 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  }
+}
+
+.btn-resume {
+  margin-bottom: 1rem;
+}

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "wip": {
+    "v2": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -42,7 +42,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/wip",
+            "outputPath": "dist/v2",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -58,8 +58,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/assets/styles/monolith.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -111,13 +110,13 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "wip:build:production"
+              "buildTarget": "v2:build:production"
             },
             "development": {
-              "buildTarget": "wip:build:development"
+              "buildTarget": "v2:build:development"
             },
             "local": {
-              "buildTarget": "wip:build:local"
+              "buildTarget": "v2:build:local"
             }
           },
           "defaultConfiguration": "development"
@@ -148,5 +147,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
