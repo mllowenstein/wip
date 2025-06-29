@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Nested Dialog</h2>
+<mat-dialog-content>
+  <p>You can keep opening new nested dialogs.</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button (click)="openNextDialog()">Open Another</button>
+</mat-dialog-actions>

@@ -1,39 +1,101 @@
-<main>
-  <mll-sidenav #sidenav></mll-sidenav>
-  <div class="debut-content" [@staggeredFadeIn] *ngIf="landingInView">
+
+<!-- src/app/debut/debut.component.html -->
+<div class="portfolio-container" [class.mobile]="isMobile()">
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" *ngIf="isLoading()" [@staggeredFadeIn]>
+    <div class="loader">
+      <h2>Michael Lowenstein</h2>
+      <div class="loading-bar"></div>
+    </div>
+  </div>
+
+  <!-- Main Portfolio Content -->
+  <div class="portfolio-content" *ngIf="!isLoading()" [@staggeredFadeIn]>
     <mll-topnav
       #topnav
       [active]="activeSection()"
+      (showSidenav)="showSidenav()"
+      [availableSlugs]="availableSlugs"
       (sectionChange)="setActiveSection($event)">
     </mll-topnav>
-    <!-- <mll-about #about [class.active]="isActive('aboutme')" class="animated-item"></mll-about> -->
-    <mll-about
-      #about
-      class="animated-item"
-      (inView)="isActive('aboutme')"
-      (inView)="onInView('aboutme', $event)"
-      mllInView
-    ></mll-about>
-    <mll-experience
-      #experience
-      class="animated-item"
-      [class.active]="isActive('experience')"
-      (inView)="onInView('experience', $event)"
-      mllInView
-      ></mll-experience>
-    <mll-education
-      #education
-      class="animated-item"
-     [class.active]="isActive('education')"
-      (inView)="onInView('education', $event)"
-     mllInView
-    ></mll-education>
-    <mll-skills
-      #skills
-      class="animated-item"
-      [class.active]="isActive('skills')"
-      (inView)="onInView('skills', $event)"
-      mllInView
-    ></mll-skills>
+
+    <mll-sidenav
+      [engineerData]="me"
+      [isMobile]="isMobile()"
+      [visible]="showSidenav()"
+      [profileImagePath]="'assets/profile.png'"
+      (contactAction)="onContactAction($event)"
+      (sectionNavigation)="onSectionNavigation($event)">
+    </mll-sidenav>
+
+    <!-- Portfolio Sections -->
+    <main class="portfolio-main">
+
+      <!-- About Section -->
+      <section
+        id="about"
+        class="portfolio-section"
+        [class.active]="isActiveSection('about')"
+        mllInView
+        (inView)="onSectionInView('about', $event)">
+        <mll-about></mll-about>
+      </section>
+
+      <!-- Experience Section -->
+      <section
+        id="experience"
+        class="portfolio-section"
+        [class.active]="isActiveSection('experience')"
+        mllInView
+        (inView)="onSectionInView('experience', $event)">
+        <mll-experience></mll-experience>
+      </section>
+
+      <!-- Education Section -->
+      <section
+        id="education"
+        class="portfolio-section"
+        [class.active]="isActiveSection('education')"
+        mllInView
+        (inView)="onSectionInView('education', $event)">
+        <mll-education></mll-education>
+      </section>
+
+      <!-- Skills Section -->
+      <section
+        id="skills"
+        class="portfolio-section"
+        [class.active]="isActiveSection('skills')"
+        mllInView
+        (inView)="onSectionInView('skills', $event)">
+        <mll-skills></mll-skills>
+      </section>
+
+      <!-- Projects Section (if exists) -->
+      <section
+        id="projects"
+        class="portfolio-section"
+        [class.active]="isActiveSection('projects')"
+        mllInView
+        (inView)="onSectionInView('projects', $event)"
+        *ngIf="availableSlugs.length > 4">
+        <mll-projects></mll-projects>
+      </section>
+
+    </main>
+
+    <!-- Section Indicator (Mobile) -->
+    <div class="section-indicator" *ngIf="isMobile()">
+      <span
+        *ngFor="let section of availableSlugs"
+        class="indicator-dot"
+        [class.active]="isActiveSection(section)"
+        (click)="setActiveSection(section)"
+        [attr.aria-label]="'Go to ' + section">
+      </span>
+    </div>
+
   </div>
-</main>
+
+</div>

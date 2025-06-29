@@ -1,4 +1,4 @@
-<aside class="sidebar" [class.active]="showContacts">
+<!-- <aside class="sidebar" [class.active]="showContacts">
   <div class="sidebar-info">
     <figure class="avatar-box">
       <img alt="Headshot" [src]="profilePath" loading="lazy">/>
@@ -16,6 +16,22 @@
   </div>
 
   <div class="sidebar-info-more">
-    <!-- TODO -->
+  </div>
+</aside> -->
+
+
+<!-- Mobile Sidebar -->
+<aside class="mobile-sidebar"
+      *ngIf="isMobile">
+  <div class="sidebar-content">
+    <nav class="mobile-nav">
+      <button
+        *ngFor="let section of availableSlugs"
+        class="mobile-nav-item"
+        [class.active]="changeSection(section)"
+        (click)="changeSection(section, true)">
+        {{ section }}
+      </button>
+    </nav>
   </div>
 </aside>

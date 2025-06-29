@@ -157,9 +157,15 @@ export interface ContactMethod {
 export interface Engineer {
   name: string;
   title: string;
+  intro?: string;
   opentowork?: boolean;
   opentofeedback?: boolean;
   contacts: ContactMethod[];
+  contact: Map<string, ContactMethod> | any;
+  career?: TimelineEvent[];
+  skillsets?: SkillMetric[];
+  education?: any[];
+  workexp?: Experience[];
 }
 
 export interface Experience {

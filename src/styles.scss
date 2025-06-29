@@ -14,8 +14,15 @@ html {
 html,
 body {
   margin: 0;
-  overflow: hidden;
+  height: 100%;
+  overflow: auto;
   background: #f8f8ff !important;
+}
+
+// Add to global styles if issues persist
+#app-root {
+  min-height: 100vh;
+  position: relative;
 }
 
 h1,
@@ -113,11 +120,6 @@ body {
   padding: 0 20px 20px 20px !important;
   font-family: 'Montserrat' !important;
 }
-
-// main {
-//   padding: 0 6px 6px 6px;
-//   border: 3px solid #0055a5;
-// }
 
 :root {
   --primary-color: #003366;
@@ -1050,3 +1052,8 @@ body {
 /**
  * Cards UI
  */
+
+
+ html, body {
+  overflow: auto !important;
+ }

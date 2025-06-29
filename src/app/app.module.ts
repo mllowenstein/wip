@@ -128,4 +128,31 @@ const matchWatchlistToIcon = (
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor() {
+    // Development warning about deprecated components
+    if (!env.production) {
+      console.warn(`
+        🚨 PORTFOLIO REFACTOR NOTICE 🚨
+
+        The following components are DEPRECATED and will be removed:
+        - PortfolioComponent (replaced by DebutComponent)
+        - BusinessCardComponent (functionality moved to LandingComponent)
+        - SidebarComponent (replaced by TopnavComponent)
+        - SidenavComponent (no longer needed)
+
+        Migration completed:
+        ✅ LandingComponent - Refactored as entry point
+        ✅ DebutComponent - Now main portfolio page
+        ✅ TopnavComponent - Simplified navigation
+        ✅ Routing - Updated to use new structure
+
+        Next steps:
+        1. Remove deprecated components
+        2. Clean up unused styles
+        3. Update any remaining references
+      `);
+    }
+  }
+}

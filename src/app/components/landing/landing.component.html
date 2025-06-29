@@ -1,20 +1,20 @@
 <!-- src/app/landing/landing.component.html -->
 <main class="container">
   <section class="hero">
-    <h1>{{ name }}</h1>
-    <h2>{{ title }}</h2>
-    <p>{{ summary }}</p>
-    <div class="contact">
-      <a href="tel:{{ contact.phone }}">{{ contact.phone }}</a>
-      <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
-      <a [href]="contact.linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <a class="btn-resume" [href]="resumeUrl" target="_blank" rel="noopener">View Full Resume</a>
+    <h1>{{ whoami.name }}</h1>
+    <h2>{{ whoami.title }}</h2>
+    <p>{{ whoami.intro }}</p>
+    <!-- <div class="contact">
+      <a href="tel:{{ whoami.contact.mobile }}">{{ whoami.contact.phone }}</a>
+      <a href="mailto:{{ whoami.contact.email }}">{{ whoami.contact.email }}</a>
+      <a [href]="whoami.contact.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    </div> -->
+    <a class="btn-resume btn custom-btn-3" [href]="myresume" target="_blank" rel="noopener">View Full Resume</a>
   </section>
 
   <section class="experience">
     <h3>Experience</h3>
-    <div *ngFor="let exp of experiences" class="experience-item">
+    <div *ngFor="let exp of whoami.workexp" class="experience-item">
       <h4>{{ exp.position }}<span *ngIf="exp.company"> | {{ exp.company }}</span></h4>
       <time>{{ exp.period }}</time>
       <ul>
@@ -23,18 +23,46 @@
     </div>
   </section>
 
-  <section class="skills">
+  <section class="skills" >
     <h3>Core Skills &amp; Technologies</h3>
     <ul class="skills-list">
-      <li *ngFor="let skill of skills">{{ skill }}</li>
+      <li *ngFor="let skill of whoami.skillsets">{{ skill }}</li>
     </ul>
   </section>
 
   <section class="education">
     <h3>Education</h3>
-    <div *ngFor="let ed of education" class="education-item">
+    <div *ngFor="let ed of whoami.education" class="education-item">
       <h4>{{ ed.degree }}</h4>
       <p>{{ ed.school }}, {{ ed.year }}</p>
     </div>
   </section>
 </main>
+
+<!--
+<header class="page-header">
+  <mll-navbar #nav class="app-nav"
+    (toggling)="onToggling($event)"
+    (scrolling)="onScrolling($event)"
+    (navigating)="onNavigating($event)">
+  </mll-navbar>
+</header>
+<mat-sidenav-container class="sections-container">
+
+  <mat-sidenav #sidenav mode="side" class="sections-nav" [opened]="sidebarVisible()">
+    <mll-sidebar
+      #sidebar
+      [visible]="sidebarVisible()"
+      (focusing)="onChangeFocus($event)"
+      >
+    </mll-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content class="sections-content">
+
+    <button mat-icon-button class="toggle-btn" (click)="toggleSidebar()">
+      <mat-icon>{{ sidebarVisible() ? 'close' : 'menu' }}</mat-icon>
+    </button>
+    <mll-business-card (explore)="onExplore()"></mll-business-card>
+    <mll-sections #sections *ngIf="sidebarVisible()" [activated]="focusing()"></mll-sections>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->

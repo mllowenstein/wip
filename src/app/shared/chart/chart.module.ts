@@ -26,7 +26,7 @@ import { ModalModule } from '../modal/modal.module';
     HttpClientModule,
     MyOwnMaterialModule,
     ReactiveFormsModule,
-    NotificationModule
+    NotificationModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })

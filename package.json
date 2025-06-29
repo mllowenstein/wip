@@ -39,6 +39,7 @@
     "clsx": "^2.1.1",
     "crypto-js": "^4.2.0",
     "date-fns": "^4.1.0",
+    "echarts": "^5.6.0",
     "esbuild": "^0.25.1",
     "human-regex": "^2.1.5",
     "ng-apexcharts": "^1.15.0",

@@ -3,12 +3,16 @@ import { CommonModule } from '@angular/common';
 import { BaseModalComponent } from './base/base-modal.component';
 import { ModalService } from './modal.service';
 import { MyOwnMaterialModule } from '../../core/material';
+import { NestedModalComponent } from './nested-modal/nested-modal.component';
 
 @NgModule({
-  declarations: [BaseModalComponent],
+  declarations: [
+    BaseModalComponent,
+    NestedModalComponent
+  ],
   imports: [
     CommonModule,
-    MyOwnMaterialModule
+    MyOwnMaterialModule,
   ],
   providers: [ModalService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]

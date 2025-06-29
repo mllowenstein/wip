@@ -1,4 +1,4 @@
-<nav class="navbar">
+<!-- <nav class="navbar">
   <ul class="navbar-list">
     <li class="navbar-item"*ngFor="let nav of sitenavs">
       <button
@@ -10,4 +10,41 @@
       </button>
     </li>
   </ul>
-</nav>
+</nav> -->
+
+
+<!-- Top Navigation -->
+<header class="top-nav">
+  <div class="nav-content">
+    <button class="home-btn" (click)="onHomeClick()" aria-label="Go to landing page">
+      <span class="home-icon">←</span>
+      <span *ngIf="!isMobile">Back to Landing</span>
+    </button>
+
+    <nav class="section-nav" *ngIf="!!isMobile">
+      <button
+        *ngFor="let section of availableSlugs"
+        class="nav-item"
+        [class.active]="isActiveSection(section)"
+        (click)="onSectionChange(section)"
+        [attr.aria-label]="'Navigate to ' + section">
+        {{ section }}
+      </button>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="resume-btn" (click)="onResumeClick()" aria-label="Download resume">
+        Resume
+      </button>
+      <button
+        class="menu-toggle"
+        *ngIf="isMobile"
+        (click)="toggleSidebar()"
+        [attr.aria-label]="showSidenav ? 'Close menu' : 'Open menu'">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

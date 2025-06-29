@@ -1,11 +1,462 @@
+// Variables
+$primary-color: #3b82f6;
+$secondary-color: #1f2937;
+$accent-color: #f59e0b;
+$text-primary: #111827;
+$text-secondary: #6b7280;
+$background-light: #f9fafb;
+$background-white: #ffffff;
+$border-color: #e5e7eb;
+$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+$shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+
+// Animation durations
+$animation-fast: 0.2s;
+$animation-normal: 0.3s;
+$animation-slow: 0.6s;
+
+
+:host {
+  display: block;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: $text-primary;
+}
+
+.portfolio-container {
+  min-height: 100vh;
+  background: $background-light;
+  overflow-x: hidden;
+
+  &.mobile {
+    .top-nav .section-nav {
+      display: none;
+    }
+  }
+}
+
+// Loading Screen
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $background-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .loader {
+    text-align: center;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $text-primary;
+      margin: 0 0 1rem 0;
+    }
+
+    .loading-bar {
+      width: 200px;
+      height: 3px;
+      background: $border-color;
+      border-radius: 1.5px;
+      overflow: hidden;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, $primary-color, transparent);
+        animation: loading 2s infinite;
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+// Top Navigation
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba($background-white, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $border-color;
+
+  .nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+
+    @media (min-width: 768px) {
+      padding: 0 2rem;
+    }
+  }
+
+  .home-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: $text-secondary;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color $animation-fast ease;
+    padding: 0.5rem;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    .home-icon {
+      font-size: 1.25rem;
+    }
+  }
+
+  .section-nav {
+    display: flex;
+    gap: 1rem;
+
+    .nav-item {
+      background: none;
+      border: none;
+      color: $text-secondary;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      transition: all $animation-fast ease;
+      position: relative;
+
+      &:hover {
+        color: $primary-color;
+        background: rgba($primary-color, 0.1);
+      }
+
+      &.active {
+        color: $primary-color;
+        background: rgba($primary-color, 0.1);
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -1rem;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 20px;
+          height: 2px;
+          background: $primary-color;
+        }
+      }
+    }
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .resume-btn {
+      background: $primary-color;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color $animation-fast ease;
+
+      &:hover {
+        background: darken($primary-color, 10%);
+      }
+    }
+
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+
+      span {
+        width: 1.5rem;
+        height: 0.125rem;
+        background: $text-primary;
+        transition: all $animation-fast ease;
+      }
+    }
+  }
+}
+
+// Mobile Sidebar
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  visibility: hidden;
+  opacity: 0;
+  transition: all $animation-normal ease;
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+
+    .sidebar-content {
+      transform: translateX(0);
+    }
+  }
+
+  .sidebar-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background: $background-white;
+    box-shadow: $shadow-lg;
+    transform: translateX(100%);
+    transition: transform $animation-normal ease;
+    padding-top: 5rem;
+
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+
+      .mobile-nav-item {
+        background: none;
+        border: none;
+        color: $text-primary;
+        font-weight: 500;
+        text-align: left;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        transition: background-color $animation-fast ease;
+
+        &:hover {
+          background: $background-light;
+        }
+
+        &.active {
+          color: $primary-color;
+          background: rgba($primary-color, 0.1);
+        }
+      }
+    }
+  }
+
+  .sidebar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(black, 0.5);
+    cursor: pointer;
+  }
+}
+
+// Main Portfolio Content
+.portfolio-main {
+  padding-top: 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .portfolio-section {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all $animation-slow ease;
+
+    @media (min-width: 768px) {
+      padding: 3rem 2rem;
+    }
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    // Ensure sections are always visible for accessibility
+    &:target,
+    &:focus-within {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Section Indicator (Mobile)
+.section-indicator {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 50;
+
+  .indicator-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba($text-secondary, 0.5);
+    cursor: pointer;
+    transition: all $animation-fast ease;
+
+    &.active {
+      background: $primary-color;
+      transform: scale(1.2);
+    }
+
+    &:hover {
+      background: $primary-color;
+    }
+  }
+}
+
+// Animation Classes (for use with Angular animations)
 .animated-item {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s ease;
-  will-change: opacity, transform;
+  transition: all $animation-slow ease;
 
   &.active {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+// Responsive Design
+@media (max-width: 767px) {
+  .portfolio-main {
+    padding-top: 4rem;
+
+    .portfolio-section {
+      padding: 1.5rem 1rem;
+      min-height: auto;
+    }
+  }
+
+  .top-nav {
+    .nav-content {
+      padding: 0 1rem;
+    }
+
+    .home-btn span:not(.home-icon) {
+      display: none;
+    }
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .portfolio-container {
+    background: white;
+  }
+
+  .top-nav {
+    background: white;
+    border-bottom: 2px solid black;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01s !important;
+    transition-duration: 0.01s !important;
+  }
+
+  .loading-bar::after {
+    animation: none;
+  }
+}
+
+// Print styles
+@media print {
+  .top-nav,
+  .mobile-sidebar,
+  .section-indicator {
+    display: none;
+  }
+
+  .portfolio-main {
+    padding-top: 0;
+
+    .portfolio-section {
+      opacity: 1;
+      transform: none;
+      page-break-inside: avoid;
+    }
+  }
+}
+
+.about, .skills-preview, .contact {
+  padding: 4rem 0; // Adequate spacing
+  min-height: auto; // Don't force viewport height
+}
+
+.portfolio-container {
+  transition: margin-left 0.3s ease;
+
+  &.sidenav-open {
+    margin-left: 320px; // Width of sidenav
+
+    @media (max-width: 1024px) {
+      margin-left: 0; // On mobile, overlay instead of push
+    }
+  }
+}
+
+.sidenav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+
+  @media (min-width: 1025px) {
+    display: none; // No overlay on desktop
+  }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.menu-toggle {
+  display: block;
+
+  @media (min-width: 1025px) {
+    // Show/hide based on your design preferences
   }
 }
